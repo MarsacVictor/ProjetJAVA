@@ -4,5 +4,24 @@
   <welcome-file-list>
     <welcome-file>servletAccueil</welcome-file>
   </welcome-file-list>
-
+  <servlet>
+    <description></description>
+    <display-name>ServletInscription</display-name>
+    <servlet-name>ServletInscription</servlet-name>
+    <servlet-class>Servlet.ServletInscription</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletInscription</servlet-name>
+    <url-pattern>/ServletInscription</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>test</display-name>
+    <servlet-name>test</servlet-name>
+    <servlet-class>Servlet.test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
 </web-app>
