@@ -1,17 +1,67 @@
-
+/**
+ * La classe Utilisateur représente un utilisateur dans le système.
+ */
 public class Utilisateur {
-	private int no_utilisateur;
-	private String pseudo;
-	private String nom;
-	private String prenom;
-	private String email;
-	private String telephone;
-	private String rue;
-	private String code_postal;
-	private String ville;
-	private String mot_de_passe;
-	private String credit;
-	private char administrateur;
+
+    /**
+     * Le numéro d'identification de l'utilisateur.
+     */
+    private int no_utilisateur;
+
+    /**
+     * Le pseudo de l'utilisateur.
+     */
+    private String pseudo;
+
+    /**
+     * Le nom de l'utilisateur.
+     */
+    private String nom;
+
+    /**
+     * Le prénom de l'utilisateur.
+     */
+    private String prenom;
+
+    /**
+     * L'adresse email de l'utilisateur.
+     */
+    private String email;
+
+    /**
+     * Le numéro de téléphone de l'utilisateur.
+     */
+    private String telephone;
+
+    /**
+     * La rue de l'utilisateur.
+     */
+    private String rue;
+
+    /**
+     * Le code postal de l'utilisateur.
+     */
+    private String code_postal;
+
+    /**
+     * La ville de l'utilisateur.
+     */
+    private String ville;
+
+    /**
+     * Le mot de passe de l'utilisateur.
+     */
+    private String mot_de_passe;
+
+    /**
+     * Le crédit de l'utilisateur.
+     */
+    private String credit;
+
+    /**
+     * Indique si l'utilisateur est un administrateur ou non.
+     */
+    private char administrateur;
 	
 	
 	
@@ -20,7 +70,21 @@ public class Utilisateur {
 	}
 
 
-
+/**
+ * Constructeur de la classe Utilisateur.
+ * 
+ * @param pseudo          Le pseudo de l'utilisateur.
+ * @param nom             Le nom de l'utilisateur.
+ * @param prenom          Le prénom de l'utilisateur.
+ * @param email           L'adresse email de l'utilisateur.
+ * @param telephone       Le numéro de téléphone de l'utilisateur.
+ * @param rue             La rue de l'utilisateur.
+ * @param code_postal     Le code postal de l'utilisateur.
+ * @param ville           La ville de l'utilisateur.
+ * @param mot_de_passe    Le mot de passe de l'utilisateur.
+ * @param credit          Le crédit de l'utilisateur.
+ * @param administrateur  Indique si l'utilisateur est un administrateur ou non.
+ */
 	public Utilisateur( String pseudo, String nom, String prenom, String email, String telephone,
 			String rue, String code_postal, String ville, String mot_de_passe, String credit, char administrateur) {
 		super();

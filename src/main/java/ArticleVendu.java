@@ -1,7 +1,8 @@
+import java.sql.Date;
 /**
  * La classe ArticleVendu représente un article vendu aux enchères.
  * 
- * @author [votre nom]
+ * @author [Corentin CADU / Victor MARSAC]
  * @version 1.0
  */
 public class ArticleVendu {
