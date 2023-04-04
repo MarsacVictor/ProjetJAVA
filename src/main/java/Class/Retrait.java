@@ -1,3 +1,4 @@
+package Class;
 /**
  * La classe Retrait représente l'adresse où un utilisateur peut retirer un article vendu.
  * 

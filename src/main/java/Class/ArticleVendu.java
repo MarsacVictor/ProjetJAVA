@@ -1,3 +1,4 @@
+package Class;
 import java.sql.Date;
 /**
  * La classe ArticleVendu représente un article vendu aux enchères.

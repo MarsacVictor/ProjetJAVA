@@ -1,3 +1,4 @@
+package Class;
 /**
  * La classe Categorie représente une catégorie d'article vendu aux enchères.
  * 

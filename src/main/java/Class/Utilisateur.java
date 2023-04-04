@@ -1,3 +1,4 @@
+package Class;
 /**
  * La classe Utilisateur représente un utilisateur dans le système.
  */
