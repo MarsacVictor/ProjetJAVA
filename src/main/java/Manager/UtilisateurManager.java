@@ -8,7 +8,7 @@ public class UtilisateurManager {
 	private UtilisateurDAO UtilisateurDAO;
 	
 	public UtilisateurManager() {
-		this.UtilisateurDAO=DAOFactory.getListeCourseDAO();
+		this.UtilisateurDAO=DAOFactory.getUtilisateurDAO();
 	}
 	
 	public void AjouterUtilisateur(String pseudo, String email, String mdp) {

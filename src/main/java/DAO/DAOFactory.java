@@ -2,7 +2,7 @@ package DAO;
 
 public abstract class DAOFactory {
 	
-	public static UtilisateurDAO getListeCourseDAO()
+	public static UtilisateurDAO getUtilisateurDAO()
 	{
 		return new UtilisateurDAODB();
 	}
