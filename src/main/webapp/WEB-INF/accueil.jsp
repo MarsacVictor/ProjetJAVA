@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ include file="navbar_connecte.jsp" %>
+    <%if (session.getAttribute("pseudo") != null) {%> 
+    	<%@ include file="navbar_connecte.jsp" %>
+    <%} else {%>
+    		<%@ include file="navbar.jsp" %>	
+    	<%} %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +16,10 @@
     <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #293040">
-	<div class="text-center" style="color: #F2913D"><h1>Liste des enchères</h1></div>
+	<div class="text-center" style="color: #FFF"><h1>Liste des enchères</h1></div>
 	
 	<br>
-	
+	<p>Bienvenue, ${sessionScope.pseudo}!</p>
 	<div class="container">
 		<div class="row">	
 			<h3 style="color: #F2913D">Filtres:</h3>
