@@ -15,76 +15,76 @@
 	<br>
 	<div class="container">
 		<div class="row">
-		<form method="get" class="" action="servletInscription">	
+		<form method="post" class="" action="servletInscription">	
 			<div class="form-row" style="width: 1200px;">
 			
 				<div class="form-group col-md-6">
-					<label for="Pseudo"><h3>Pseudo:</h3></label>
+					<label for="pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Pseudo" aria-label="Pseudo">
+						<input type="text" class="form-control" placeholder="pseudo" aria-label="pseudo" name="pseudo" id="pseudo">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="Nom"><h3>Nom:</h3></label>
+					<label for="nom"><h3>Nom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Nom" aria-label="Nom">
+						<input type="text" class="form-control" placeholder="Nom" aria-label="nom" name="nom" id="nom">
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
-					<label for="Prenom"><h3>Prenom:</h3></label>
+					<label for="prenom"><h3>Prenom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom ">
+						<input type="text" class="form-control" placeholder="Prenom" aria-label="prenom" name="prenom" id="prenom">
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
-					<label for="Email"><h3>Email:</h3></label>
+					<label for="email"><h3>Email:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Email" aria-label="Email">
+						<input type="text" class="form-control" placeholder="Email" aria-label="email" name="email" id="email">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="Telephone"><h3>Telephone:</h3></label>
+					<label for="telephone"><h3>Telephone:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Telephone" aria-label="Telephone">
+						<input type="text" class="form-control" placeholder="Telephone" aria-label="telephone" name="telephone" id="telephone">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="Rue"><h3>Rue:</h3></label>
+					<label for="rue"><h3>Rue:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Rue" aria-label="Rue">
+						<input type="text" class="form-control" placeholder="Rue" aria-label="rue" name="rue" id="rue">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="Code_Postal"><h3>Code Postal:</h3></label>
+					<label for="code_postal"><h3>Code Postal:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Code postal" aria-label="codepostal">
+						<input type="text" class="form-control" placeholder="Code postal" aria-label="code_postal" name="code_postal" id="code_postal">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="Ville"><h3>Ville:</h3></label>
+					<label for="ville"><h3>Ville:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Ville" aria-label="Ville">
+						<input type="text" class="form-control" placeholder="Ville" aria-label="ville" name="ville" id="ville">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="MotDePasse"><h3>Mot de passe:</h3></label>
+					<label for="mot_de_passe"><h3>Mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse">
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="mot_de_passe" name="mot_de_passe" id="mot_de_passe">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="Confirmation"><h3>Confirmation:</h3></label>
+					<label for="confirmation"><h3>Confirmation:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation">
+						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation" name="confirmation" id="confirmation">
 					</div>
 				</div>
 				

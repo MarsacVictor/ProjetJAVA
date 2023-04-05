@@ -29,20 +29,7 @@ public class ServletInscription extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String pseudo="";
-		String email="";
-		String mdp="";
-		
-		pseudo = lireParametrePseudo(request);
-		email = lireParametreEmail(request);
-		mdp = lireParametreMdp(request);
-		
-		UtilisateurManager utilisateurManager = new UtilisateurManager();
-		utilisateurManager.AjouterUtilisateur(pseudo, email, mdp);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-		rd.forward(request, response);
-		
+		// TODO Auto-generated method stub		
 	}
 
 	/**
@@ -50,24 +37,35 @@ public class ServletInscription extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String pseudo="";
+		String nom ="";
+		String prenom ="";
+		String email="";
+		String telephone ="";
+		String rue ="";
+		String code_postal ="";
+		String ville ="";
+		String mdp="";
+		int credit = 0;
+		
+		pseudo = request.getParameter("pseudo");
+		nom = request.getParameter("nom");
+		prenom = request.getParameter("prenom");
+		email = request.getParameter("email");
+		telephone = request.getParameter("telephone");
+		rue = request.getParameter("rue");
+		code_postal = request.getParameter("code_postal");
+		ville = request.getParameter("ville");
+		mdp = request.getParameter("mot_de_passe");
+		credit = 100;
+
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+		rd.forward(request, response);
 	}
 
-	private String lireParametrePseudo(HttpServletRequest request) {
-		String pseudo;
-		pseudo = request.getParameter("pseudo");
-		return pseudo;
-	}
-	private String lireParametreEmail(HttpServletRequest request) {
-		String email;
-		email = request.getParameter("email");
-		return email;
-	}
-	private String lireParametreMdp(HttpServletRequest request) {
-		String mdp;
-		mdp = request.getParameter("mdp");
-		return mdp;
-	}
+	
 	
 	
 }

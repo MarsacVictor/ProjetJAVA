@@ -9,7 +9,7 @@ import Class.Utilisateur;
 
 public class UtilisateurDAODB implements UtilisateurDAO {
 	
-	private static final String INSERT_UTILISATEUR = "insert into UTILISATEUR(pseudo, nom, mot_de_passe) values(?, ?, ?);";
+	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
@@ -21,19 +21,32 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				cnx.setAutoCommit(false);
 				PreparedStatement pstmt;
 				ResultSet rs;
-					pstmt = cnx.prepareStatement(INSERT_UTILISATEUR, PreparedStatement.RETURN_GENERATED_KEYS);
-					pstmt.setString(1, utilisateur.getPseudo());
-					pstmt.setString(2, utilisateur.getEmail());
-					pstmt.setString(3, utilisateur.getMot_de_passe());
-					pstmt.executeUpdate();
-					rs = pstmt.getGeneratedKeys();
-					if(rs.next())
-					{
-						utilisateur.setNo_utilisateur(rs.getInt(1));
-					}
-					rs.close();
-					pstmt.close();
-					cnx.commit();
+				pstmt = cnx.prepareStatement(INSERT_UTILISATEUR, PreparedStatement.RETURN_GENERATED_KEYS);
+				pstmt.setString(1, utilisateur.getPseudo());
+				pstmt.setString(2, utilisateur.getNom());
+				pstmt.setString(3, utilisateur.getPrenom());			
+				pstmt.setString(4, utilisateur.getEmail());
+				pstmt.setString(5, utilisateur.getTelephone());
+				pstmt.setString(6, utilisateur.getRue());
+				pstmt.setString(7, utilisateur.getCode_postal());
+				pstmt.setString(8, utilisateur.getVille());
+				pstmt.setString(9, utilisateur.getMot_de_passe());	
+				pstmt.setInt(10, 5000);	
+				if (utilisateur.getAdministrateur() == 0) {
+					pstmt.setBoolean(11, false);	
+				} else {
+					pstmt.setBoolean(11, true);
+				}
+				pstmt.setBoolean(11, true);
+				pstmt.executeUpdate();
+				rs = pstmt.getGeneratedKeys();
+				if(rs.next())
+				{
+					utilisateur.setNo_utilisateur(rs.getInt(1));
+				}
+				rs.close();
+				pstmt.close();
+				cnx.commit();
 			}							
 			catch(Exception e)
 			{

@@ -57,7 +57,7 @@ public class Utilisateur {
     /**
      * Le crédit de l'utilisateur.
      */
-    private String credit;
+    private int credit;
 
     /**
      * Indique si l'utilisateur est un administrateur ou non.
@@ -87,7 +87,7 @@ public class Utilisateur {
  * @param administrateur  Indique si l'utilisateur est un administrateur ou non.
  */
 	public Utilisateur( String pseudo, String nom, String prenom, String email, String telephone,
-			String rue, String code_postal, String ville, String mot_de_passe, String credit, char administrateur) {
+			String rue, String code_postal, String ville, String mot_de_passe, int credit, char administrateur) {
 		super();
 		this.pseudo = pseudo;
 		this.nom = nom;
@@ -224,13 +224,13 @@ public class Utilisateur {
 
 
 
-	public String getCredit() {
+	public int getCredit() {
 		return credit;
 	}
 
 
 
-	public void setCredit(String credit) {
+	public void setCredit(int credit) {
 		this.credit = credit;
 	}
 
