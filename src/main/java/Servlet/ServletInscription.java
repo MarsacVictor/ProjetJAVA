@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -37,32 +39,42 @@ public class ServletInscription extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String pseudo="";
-		String nom ="";
-		String prenom ="";
-		String email="";
-		String telephone ="";
-		String rue ="";
-		String code_postal ="";
-		String ville ="";
-		String mdp="";
-		int credit = 0;
-		
-		pseudo = request.getParameter("pseudo");
-		nom = request.getParameter("nom");
-		prenom = request.getParameter("prenom");
-		email = request.getParameter("email");
-		telephone = request.getParameter("telephone");
-		rue = request.getParameter("rue");
-		code_postal = request.getParameter("code_postal");
-		ville = request.getParameter("ville");
-		mdp = request.getParameter("mot_de_passe");
-		credit = 100;
+		if(request.getParameter("mot_de_passe").equals(request.getParameter("confirmation"))) {
+			HttpSession session = request.getSession();			
+			String pseudo="";
+			String nom ="";
+			String prenom ="";
+			String email="";
+			String telephone ="";
+			String rue ="";
+			String code_postal ="";
+			String ville ="";
+			String mdp="";
+			int credit = 0;
+			
+			pseudo = request.getParameter("pseudo");
+			nom = request.getParameter("nom");
+			prenom = request.getParameter("prenom");
+			email = request.getParameter("email");
+			telephone = request.getParameter("telephone");
+			rue = request.getParameter("rue");
+			code_postal = request.getParameter("code_postal");
+			ville = request.getParameter("ville");
+			mdp = request.getParameter("mot_de_passe");
+			credit = 100;
 
-		UtilisateurManager utilisateurManager = new UtilisateurManager();
-		utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-		rd.forward(request, response);
+			session.setAttribute("pseudo", pseudo);
+			
+			UtilisateurManager utilisateurManager = new UtilisateurManager();
+			utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
+			request.setAttribute("pseudo", pseudo);
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd.forward(request, response);
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
+			System.err.println("Les deux mots de passe sont différent !");
+			rd.forward(request, response);
+		}	
 	}
 
 	

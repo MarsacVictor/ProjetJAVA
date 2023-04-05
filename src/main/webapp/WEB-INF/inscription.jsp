@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
     <%@ include file="navbar_connecte.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,7 @@
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+	
 	<div class="text-center">
 		<h1>Mon profil</h1>
 	</div>
@@ -21,7 +23,7 @@
 				<div class="form-group col-md-6">
 					<label for="pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="pseudo" aria-label="pseudo" name="pseudo" id="pseudo">
+						<input type="text" class="form-control" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo">
 					</div>
 				</div>
 			
