@@ -44,5 +44,8 @@
 			</form>
 		</div>
 	</div>
+	<div class="text-center"><a href=""><button type="button" class="btn btn-secondary">Mot de passe oublié</button></a></div>
+	<br>
+	<div class="text-center"><a href="/inscription.jsp"><button type="button" class="btn btn-secondary">Créer compte</button></a></div>
 </body>
 </html>
