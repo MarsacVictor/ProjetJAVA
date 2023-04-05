@@ -72,7 +72,12 @@ public class ServletInscription extends HttpServlet {
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
 			
-			request.setAttribute("utilisateur", new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mdp, credit, '0' ));
+			Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mdp, credit, '0');
+			
+			session.setAttribute("utilisateur", u);
+			session.setMaxInactiveInterval(300);
+			System.out.println(u.getEmail());
+			request.setAttribute("utilisateur", u);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
