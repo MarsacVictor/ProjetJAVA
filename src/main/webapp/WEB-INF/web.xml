@@ -34,4 +34,24 @@
     <servlet-name>servletNouvelleVente</servlet-name>
     <url-pattern>/servletNouvelleVente</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>servletConnexion</display-name>
+    <servlet-name>servletConnexion</servlet-name>
+    <servlet-class>Servlet.servletConnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletConnexion</servlet-name>
+    <url-pattern>/servletConnexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletDeconnexion</display-name>
+    <servlet-name>ServletDeconnexion</servlet-name>
+    <servlet-class>Servlet.ServletDeconnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDeconnexion</servlet-name>
+    <url-pattern>/ServletDeconnexion</url-pattern>
+  </servlet-mapping>
 </web-app>
