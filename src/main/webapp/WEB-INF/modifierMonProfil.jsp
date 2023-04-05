@@ -14,7 +14,7 @@
 	<br>
 	<div class="container">
 		<div class="row">
-		<form>
+		<form method="get" class="form-example" action="servletInscription">
 			<div class="col-lg-6">
 				<h3>Pseudo: </h3>
 				<div class="input-group mb-3">
