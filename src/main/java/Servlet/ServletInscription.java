@@ -1,6 +1,7 @@
 package Servlet;
 
 import Manager.*;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,6 +12,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
+
+import Class.Utilisateur;
 
 /**
  * Servlet implementation class ServletInscription
@@ -40,7 +43,9 @@ public class ServletInscription extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		if(request.getParameter("mot_de_passe").equals(request.getParameter("confirmation"))) {
-			HttpSession session = request.getSession();			
+			
+			HttpSession session = request.getSession();		
+			
 			String pseudo="";
 			String nom ="";
 			String prenom ="";
@@ -63,11 +68,12 @@ public class ServletInscription extends HttpServlet {
 			mdp = request.getParameter("mot_de_passe");
 			credit = 100;
 
-			session.setAttribute("pseudo", pseudo);
 			
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
-			request.setAttribute("pseudo", pseudo);
+			
+			request.setAttribute("utilisateur", new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mdp, credit, '0' ));
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 		} else {

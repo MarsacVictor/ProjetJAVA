@@ -23,35 +23,35 @@
 				<div class="form-group col-md-6">
 					<label for="pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo">
+						<input type="text" class="form-control" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="nom"><h3>Nom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Nom" aria-label="nom" name="nom" id="nom">
+						<input type="text" class="form-control" placeholder="Nom" aria-label="nom" name="nom" id="nom" required>
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="prenom"><h3>Prenom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Prenom" aria-label="prenom" name="prenom" id="prenom">
+						<input type="text" class="form-control" placeholder="Prenom" aria-label="prenom" name="prenom" id="prenom" required>
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="email"><h3>Email:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Email" aria-label="email" name="email" id="email">
+						<input type="text" class="form-control" placeholder="Email" aria-label="email" name="email" id="email" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="telephone"><h3>Telephone:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Telephone" aria-label="telephone" name="telephone" id="telephone">
+						<input type="text" class="form-control" placeholder="Telephone" aria-label="telephone" name="telephone" id="telephone" >
 					</div>
 				</div>
 			
@@ -72,21 +72,21 @@
 				<div class="form-group col-md-6">
 					<label for="ville"><h3>Ville:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Ville" aria-label="ville" name="ville" id="ville">
+						<input type="text" class="form-control" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="mot_de_passe"><h3>Mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="mot_de_passe" name="mot_de_passe" id="mot_de_passe">
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="mot_de_passe" name="mot_de_passe" id="mot_de_passe" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="confirmation"><h3>Confirmation:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation" name="confirmation" id="confirmation">
+						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation" name="confirmation" id="confirmation" required>
 					</div>
 				</div>
 				

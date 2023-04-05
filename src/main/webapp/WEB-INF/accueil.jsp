@@ -20,6 +20,7 @@
 	
 	<br>
 	<p>Bienvenue, ${sessionScope.pseudo}!</p>
+	<p>Bienvenue, ${sessionScope.email}!</p>
 	<div class="container">
 		<div class="row">	
 			<h3 style="color: #F2913D">Filtres:</h3>
