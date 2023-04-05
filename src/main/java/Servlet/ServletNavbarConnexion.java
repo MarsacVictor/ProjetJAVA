@@ -5,20 +5,19 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 
 /**
- * Servlet implementation class servletConnexion
+ * Servlet implementation class ServletNavbarConnexion
  */
-public class servletConnexion extends HttpServlet {
+@WebServlet("/navbarConnexion")
+public class ServletNavbarConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servletConnexion() {
+    public ServletNavbarConnexion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +27,7 @@ public class servletConnexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 	}
 
 	/**
@@ -36,14 +35,7 @@ public class servletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		HttpSession session = request.getSession();
-		
-		String identifiant="";
-		String mdp="";
-		
-		identifiant = request.getParameter("identifiant");
-		mdp = request.getParameter("motdepasse");
+		doGet(request, response);
 	}
 
 }

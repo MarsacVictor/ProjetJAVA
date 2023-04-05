@@ -54,4 +54,14 @@
     <servlet-name>ServletDeconnexion</servlet-name>
     <url-pattern>/ServletDeconnexion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletNavbarConnexion</display-name>
+    <servlet-name>ServletNavbarConnexion</servlet-name>
+    <servlet-class>Servlet.ServletNavbarConnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNavbarConnexion</servlet-name>
+    <url-pattern>/ServletNavbarConnexion</url-pattern>
+  </servlet-mapping>
 </web-app>

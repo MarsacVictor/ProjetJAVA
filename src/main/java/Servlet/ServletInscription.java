@@ -76,7 +76,7 @@ public class ServletInscription extends HttpServlet {
 			
 			session.setAttribute("utilisateur", u);
 			session.setMaxInactiveInterval(300);
-			System.out.println(u.getEmail());
+
 			request.setAttribute("utilisateur", u);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
