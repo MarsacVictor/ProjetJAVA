@@ -57,7 +57,24 @@
 			<button type="submit" class="btn btn-light" style="margin-left: 50px;">Rechercher</button>
 		</div>
 	</div>
-	
+	 <%if (session.getAttribute("identifiant") != null) {%> 
+	 <div class="container">
+	 	<div class="row">
+	 		<form>
+	 		
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="customRadioInline1"	name="customRadioInline" class="custom-control-input"> 
+					<label class="custom-control-label" for="customRadioInline1">Achat</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input"> 
+					<label class="custom-control-label" for="customRadioInline2">Mes ventes</label>
+				</div>
+				
+			</form>
+	 	</div>
+	 </div>
+    <%}%>
 	<br>
 	
 	<!-- Carte -->

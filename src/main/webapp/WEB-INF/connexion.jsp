@@ -37,15 +37,14 @@
 				</div>
 				<div class="form-group row">
 					<div class="col-sm-10">
-						<button type="submit" class="btn btn-secondary">Connexionnn</button>
+						<button type="submit" class="btn btn-secondary">Connexion</button>
 					</div>
 				</div>
 
 			</form>
 		</div>
 	</div>
-	<div class="text-center"><a href=""><button type="button" class="btn btn-secondary">Mot de passe oublié</button></a></div>
-	<br>
+	<div class="text-center"><a href=""><button type="button" class="btn btn-secondary" style="margin-left:50px;">Mot de passe oublié</button></a></div>
 	<div class="text-center"><a href="/inscription.jsp"><button type="button" class="btn btn-secondary">Créer compte</button></a></div>
 </body>
 </html>

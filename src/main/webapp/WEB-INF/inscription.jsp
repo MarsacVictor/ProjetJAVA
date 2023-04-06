@@ -16,7 +16,7 @@
 <body>
 	
 	<div class="text-center">
-		<h1>Mon profil</h1>
+		<h1>Inscription</h1>
 	</div>
 	<br>
 	<div class="container">
