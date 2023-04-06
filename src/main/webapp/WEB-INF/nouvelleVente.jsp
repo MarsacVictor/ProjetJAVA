@@ -102,8 +102,8 @@
 			
 			<div class="form-group col-md-4"></div>
 			<div class="form-group col-md-6">
-				<button type="submit" class="btn btn-secondary">Enregistrer</button>
-				<button type="submit" class="btn btn-secondary">Annuler</button>
+				<a href=""><button type="submit" class="btn btn-secondary">Enregistrer</button></a>
+				<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 			</div>
 			<div class="form-group col-md-2"></div>
 			

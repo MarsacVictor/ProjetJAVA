@@ -29,6 +29,7 @@
 	</div>
 	<div class="text-center" style="margin-top:50px;">
 		<button type="button" class="btn btn-secondary">Modifier</button>
+		<a href="${pageContext.request.contextPath}/retourAccueil"><button type="submit" class="btn btn-secondary">Annuler</button></a>
 	</div>
 </body>
 </html>

@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6"><a href="${pageContext.request.contextPath}/deconnexion"><button type="button" class="btn btn-secondary">Déconnexion</button></a></div>
-			<div class="col-lg-6"><a href=""><button type="button" class="btn btn-secondary">Annuler</button></a></div>
+			<div class="col-lg-6"><a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a></div>
 		</div>
 	</div>
 </body>

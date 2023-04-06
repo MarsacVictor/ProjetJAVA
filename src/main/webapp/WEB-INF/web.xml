@@ -134,4 +134,14 @@
     <servlet-name>ServletConnexion</servlet-name>
     <url-pattern>/ServletConnexion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletRedirectionRetour</display-name>
+    <servlet-name>ServletRedirectionRetour</servlet-name>
+    <servlet-class>Servlet.ServletRedirectionRetour</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRedirectionRetour</servlet-name>
+    <url-pattern>/ServletRedirectionRetour</url-pattern>
+  </servlet-mapping>
 </web-app>
