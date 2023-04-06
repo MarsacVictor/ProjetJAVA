@@ -144,4 +144,14 @@
     <servlet-name>ServletRedirectionRetour</servlet-name>
     <url-pattern>/ServletRedirectionRetour</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletDeconn</display-name>
+    <servlet-name>ServletDeconn</servlet-name>
+    <servlet-class>Servlet.ServletDeconn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDeconn</servlet-name>
+    <url-pattern>/ServletDeconn</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -61,7 +61,7 @@ public class ServletRedirectionNavBar extends HttpServlet {
 			rd.forward(request, response); 
 	     }
 		 else if(request.getServletPath().equals("/DirectionConnexion")){
-	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
+	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
 			rd.forward(request, response); 
 	     }
 	}
