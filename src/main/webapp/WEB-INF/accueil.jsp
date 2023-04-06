@@ -60,18 +60,44 @@
 	 <%if (session.getAttribute("identifiant") != null) {%> 
 	 <div class="container">
 	 	<div class="row">
-	 		<form>
-	 		
-				<div class="custom-control custom-radio custom-control-inline">
-					<input type="radio" id="customRadioInline1"	name="customRadioInline" class="custom-control-input"> 
-					<label class="custom-control-label" for="customRadioInline1">Achat</label>
+			<div class="col-3">
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="AchatCheck">
+				  <label class="form-check-label" for="AchatCheck">Achat</label>
 				</div>
-				<div class="custom-control custom-radio custom-control-inline">
-					<input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input"> 
-					<label class="custom-control-label" for="customRadioInline2">Mes ventes</label>
+					<!-- Si actif afficher les radio -->
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="EnchereOuverteCheck" value="option1" checked>
+					  <label class="form-check-label" for="EnchereOuverteCheck">enchères ouvertes</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesEncheresCheck" value="option1" checked>
+					  <label class="form-check-label" for="MesEncheresCheck">mes enchères en cours</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesEncheresRemporteCheck" value="option1" checked>
+					  <label class="form-check-label" for="MesEncheresRemporteCheck">mes enchères remportées</label>
+					</div>
+			</div>
+			<div class="col-3">
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="MesVentesCheck">
+				  <label class="form-check-label" for="MesVentesCheck">Mes ventes</label>
 				</div>
-				
-			</form>
+					<!-- Si actif afficher les radio -->
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesVentesEncoursCheck" value="option1" checked>
+					  <label class="form-check-label" for="MesVentesEncoursCheck">mes ventes en cours</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesVentesNonDebuteCheck" value="option1" checked>
+					  <label class="form-check-label" for="MesVentesNonDebuteCheck">ventes non débutées</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="VentesTermineCheck" value="option1" checked>
+					  <label class="form-check-label" for="VentesTermineCheck">ventes terminées</label>
+					</div>
+			</div>
 	 	</div>
 	 </div>
     <%}%>
