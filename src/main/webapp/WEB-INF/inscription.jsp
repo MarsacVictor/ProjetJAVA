@@ -17,7 +17,7 @@
 	<br>
 	<div class="container">
 		<div class="row">
-		<form method="post" class="" action="servletInscription">	
+		<form method="post" class="" action="${pageContext.request.contextPath}/servletCreer">	
 			<div class="form-row" style="width: 1200px;">
 			
 				<div class="form-group col-md-6">
@@ -92,8 +92,8 @@
 				
 			</div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-secondary">Créer</button>
-					<button type="submit" class="btn btn-secondary">Annuler</button>
+					<button type="submit" class="btn btn-secondary"><a href="#add">Créer</a></button>
+                    <button type="submit" class="btn btn-secondary"><a href="${pageContext.request.contextPath}/servletAnnuler">Annuler</a></button>
 				</div>
 			</form>
 		</div>
