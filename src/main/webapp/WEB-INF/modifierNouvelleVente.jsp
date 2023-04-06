@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Nouvelle Vente</title>
+<title>Modifier Vente</title>
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
 </head>
 <body>
-	<div class="text-center"><h1>Nouvelle vente</h1></div>
+	<div class="text-center"><h1>Modifier vente</h1></div>
 
 	<form method="post" class="" action="servletNouvelleVente">
 		<div class="form-row">
@@ -104,6 +104,7 @@
 			<div class="form-group col-md-6">
 				<button type="submit" class="btn btn-secondary">Enregistrer</button>
 				<button type="submit" class="btn btn-secondary">Annuler</button>
+				<button type="submit" class="btn btn-secondary">Annuler la vente</button>
 			</div>
 			<div class="form-group col-md-2"></div>
 			
