@@ -10,7 +10,7 @@ import Class.Utilisateur;
 public class UtilisateurDAODB implements UtilisateurDAO {
 	
 	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-	private static final String CONNEXION = "select no_utilisateur from UTILISATEURS where (pseudo = ? or email = ?) and mot_de_passe = ? ";
+	private static final String CONNEXION = "select pseudo, email, mot_de_passe from UTILISATEURS where (pseudo = ? or email = ?) and mot_de_passe = ? ";
 	private static final String SELECT_ALL = "select * from UTILISATEURS";
 	
 	@Override
@@ -134,11 +134,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				System.out.println(rs);
 				while(rs.next())
 				{
-					System.out.println(rs.getInt("no_utilisateur"));
-					if(trouve)
-					{						
-						trouve=true;
-					}
+					trouve=true;
 				}
 				rs.close();
 				pstmt.close();
