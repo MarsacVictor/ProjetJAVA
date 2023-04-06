@@ -64,4 +64,44 @@
     <servlet-name>ServletNavbarConnexion</servlet-name>
     <url-pattern>/ServletNavbarConnexion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServeletDirectionEncheres</display-name>
+    <servlet-name>ServeletDirectionEncheres</servlet-name>
+    <servlet-class>Servlet.ServeletDirectionEncheres</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeletDirectionEncheres</servlet-name>
+    <url-pattern>/ServeletDirectionEncheres</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServeletDirectionVendreUnArticle</display-name>
+    <servlet-name>ServeletDirectionVendreUnArticle</servlet-name>
+    <servlet-class>Servlet.ServeletDirectionVendreUnArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeletDirectionVendreUnArticle</servlet-name>
+    <url-pattern>/ServeletDirectionVendreUnArticle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServeletDirectionMonProfil</display-name>
+    <servlet-name>ServeletDirectionMonProfil</servlet-name>
+    <servlet-class>Servlet.ServeletDirectionMonProfil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeletDirectionMonProfil</servlet-name>
+    <url-pattern>/ServeletDirectionMonProfil</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServeletDirectionDeconnexion</display-name>
+    <servlet-name>ServeletDirectionDeconnexion</servlet-name>
+    <servlet-class>Servlet.ServeletDirectionDeconnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServeletDirectionDeconnexion</servlet-name>
+    <url-pattern>/ServeletDirectionDeconnexion</url-pattern>
+  </servlet-mapping>
 </web-app>

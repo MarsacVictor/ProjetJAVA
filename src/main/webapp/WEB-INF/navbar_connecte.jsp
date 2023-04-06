@@ -12,7 +12,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<a class="navbar-brand mt-2 mt-lg-0" href="#"> <img
+		<a class="navbar-brand mt-2 mt-lg-0" href="/accueil.jsp"> <img
 			src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
 			height="15" alt="Logo ENI-Enchères"/>
 		</a>
@@ -20,16 +20,16 @@
 
     <div class="d-flex align-items-center">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item"><a class="nav-link" href="#">Enchères</a></li>
+			<li class="nav-item"><a class="nav-link" href="navBarDirectionEncheres">Enchères</a></li>
 		</ul>
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item"><a class="nav-link" href="#">Vendre un article</a></li>
+			<li class="nav-item"><a class="nav-link" href="navBarDirectionVendreArticle">Vendre un article</a></li>
 		</ul>
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item"><a class="nav-link" href="#">Mon profil</a></li>
+			<li class="nav-item"><a class="nav-link" href="navBarDirectionMonProfil">Mon profil</a></li>
 		</ul>
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item"><a class="nav-link" href="#">Déconnexion</a></li>
+			<li class="nav-item"><a class="nav-link" href="navBarDirectionDeco">Déconnexion</a></li>
 		</ul>
 	</div>
 </nav>
