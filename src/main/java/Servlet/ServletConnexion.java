@@ -15,7 +15,11 @@ import Manager.UtilisateurManager;
 /**
  * Servlet implementation class ServletConnexion
  */
-@WebServlet("/servletConn")
+@WebServlet(
+		urlPatterns= {
+						"/servletConn",
+						"/servletInscription"
+		})
 public class ServletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,7 +36,10 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		 if(request.getServletPath().equals("/servletInscription")){
+	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
+			rd.forward(request, response); 
+	     }
 	}
 
 	/**
@@ -40,26 +47,27 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		RequestDispatcher rd;
-		String identifiant="";
-		String mdp="";
-		
-		identifiant = request.getParameter("identifiant");
-		mdp = request.getParameter("motdepasse");
-		
-		UtilisateurManager utilisateurManager = new UtilisateurManager();
-		System.out.println(utilisateurManager.ConnexionUtilisateur(identifiant, mdp));
-		if(utilisateurManager.ConnexionUtilisateur(identifiant, mdp)) {
-			HttpSession session = request.getSession();
-			session.setAttribute("identifiant", identifiant);
-			session.setMaxInactiveInterval(300);
-			request.setAttribute("identifiant", identifiant);
-			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-		} else {
-			rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
-		}	
-		rd.forward(request, response);
+		 if(request.getServletPath().equals("/servletConn")) {
+			 RequestDispatcher rd;
+				String identifiant="";
+				String mdp="";
+				
+				identifiant = request.getParameter("identifiant");
+				mdp = request.getParameter("motdepasse");
+				
+				UtilisateurManager utilisateurManager = new UtilisateurManager();
+				System.out.println(utilisateurManager.ConnexionUtilisateur(identifiant, mdp));
+				if(utilisateurManager.ConnexionUtilisateur(identifiant, mdp)) {
+					HttpSession session = request.getSession();
+					session.setAttribute("identifiant", identifiant);
+					session.setMaxInactiveInterval(300);
+					request.setAttribute("identifiant", identifiant);
+					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+				} else {
+					rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
+				}	
+				rd.forward(request, response);
+		 }
 	}
 
 }
