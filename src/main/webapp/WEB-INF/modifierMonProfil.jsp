@@ -15,69 +15,69 @@
 	<br>
 	<div class="container">
 		<div class="row">
-		<form method="get" class="" action="servletInscription">	
+		<form method="post" class="" action="servletModificationProfil">	
 			<div class="form-row" style="width: 1200px;">
 			
 				<div class="form-group col-md-6">
 					<label for="Pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Pseudo" aria-label="Pseudo">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("pseudo")%>" aria-label="Pseudo">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Nom"><h3>Nom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Nom" aria-label="Nom">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("nom")%>" aria-label="Nom">
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="Prenom"><h3>Prenom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom ">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("prenom")%>" aria-label="Prenom ">
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="Email"><h3>Email:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Email" aria-label="Email">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("email")%>" aria-label="Email">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Telephone"><h3>Telephone:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Telephone" aria-label="Telephone">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("telephone")%>" aria-label="Telephone">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Rue"><h3>Rue:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Rue" aria-label="Rue">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("rue")%>" aria-label="Rue">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Code_Postal"><h3>Code Postal:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Code postal" aria-label="codepostal">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("code_postal")%>" aria-label="codepostal">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Ville"><h3>Ville:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Ville" aria-label="Ville">
+						<input type="text" class="form-control" placeholder="<%= request.getAttribute("ville")%>" aria-label="Ville">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="MotDePasse"><h3>Mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse">
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse" required>
 					</div>
 				</div>
 				
@@ -101,14 +101,14 @@
 				<div class="form-group col-md-6">
 					<label for="Confirmation"><h3>Crédit:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" readonly class="form-control-plaintext">
+						<input type="text" readonly class="form-control-plaintext" placeholder="<%= request.getAttribute("credit")%>">
 					</div>
 				</div>
 				
 			</div>
 				<div class="text-center">
 					<button type="submit" class="btn btn-secondary">Enregistrer</button>
-					<button type="submit" class="btn btn-secondary">Supprimer mon compte</button>
+					<a href="${pageContext.request.contextPath}/retourAccueil"><button type="submit" class="btn btn-secondary">Supprimer mon compte</button></a>
 				</div>
 			</form>
 		</div>

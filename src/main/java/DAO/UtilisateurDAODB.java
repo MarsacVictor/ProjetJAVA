@@ -12,6 +12,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	private static final String CONNEXION = "select pseudo, email, mot_de_passe from UTILISATEURS where (pseudo = ? or email = ?) and mot_de_passe = ? ";
 	private static final String SELECT_ALL = "select * from UTILISATEURS";
+	private static final String SELECT_BY_ID = "select * from UTILISATEURS where pseudo = ? or email = ?";
 	
 	@Override
 	public boolean insertUtilisateur(Utilisateur utilisateur) {
@@ -104,9 +105,37 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	}
 
 	@Override
-	public Utilisateur selectById(int id) {
+	public Utilisateur selectById(String identifiant) {
 		// TODO Auto-generated method stub
-		return null;
+		Utilisateur u = null;
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_BY_ID);
+				pstmt.setString(1, identifiant);
+				pstmt.setString(2, identifiant);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return u;
 	}
 
 	@Override
@@ -131,7 +160,6 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				pstmt.setString(2, identifiant);
 				pstmt.setString(3, mdp);
 				rs = pstmt.executeQuery();
-				System.out.println(rs);
 				while(rs.next())
 				{
 					trouve=true;

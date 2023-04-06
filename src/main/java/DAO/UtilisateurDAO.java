@@ -9,7 +9,7 @@ public interface UtilisateurDAO {
 	public boolean insertUtilisateur (Utilisateur utilisateur);
 	public void deleteUtilisateur(int id);
 	public List<Utilisateur> selectAll();
-	public Utilisateur selectById(int id);
+	public Utilisateur selectById(String identifiant);
 	public void updateUtilisateur(int id);
 	public boolean connexion(String identifiant, String mdp);
 	

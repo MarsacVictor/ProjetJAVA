@@ -18,4 +18,9 @@ public class UtilisateurManager {
 	public boolean ConnexionUtilisateur(String identifiant, String mdp) {
 		return this.UtilisateurDAO.connexion(identifiant, mdp);
 	}
+
+	public Utilisateur selectionnerUtilisateur(String identifiant) {
+		// TODO Auto-generated method stub
+		return this.UtilisateurDAO.selectById(identifiant);
+	}
 }
