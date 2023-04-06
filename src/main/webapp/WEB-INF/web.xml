@@ -104,4 +104,24 @@
     <servlet-name>ServeletDirectionDeconnexion</servlet-name>
     <url-pattern>/ServeletDirectionDeconnexion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletNavBar</display-name>
+    <servlet-name>ServletNavBar</servlet-name>
+    <servlet-class>Servlet.ServletNavBar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNavBar</servlet-name>
+    <url-pattern>/ServletNavBar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletRedirectionNavBar</display-name>
+    <servlet-name>ServletRedirectionNavBar</servlet-name>
+    <servlet-class>Servlet.ServletRedirectionNavBar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRedirectionNavBar</servlet-name>
+    <url-pattern>/ServletRedirectionNavBar</url-pattern>
+  </servlet-mapping>
 </web-app>
