@@ -15,7 +15,5 @@
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mssql-jdbc-12.2.0.jre8.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/vendor/jquery/jquery.js"/>
-	<classpathentry kind="lib" path="src/main/webapp/vendor/jquery/jquery.min.js"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

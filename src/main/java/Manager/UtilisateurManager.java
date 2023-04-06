@@ -11,11 +11,11 @@ public class UtilisateurManager {
 		this.UtilisateurDAO=DAOFactory.getUtilisateurDAO();
 	}
 	
-	public void AjouterUtilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue, String code_postal, String ville, String mdp, int credit) {
+	public boolean AjouterUtilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue, String code_postal, String ville, String mdp, int credit) {
 		Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mdp, credit, '0');
-		this.UtilisateurDAO.insertUtilisateur(u);
+		return this.UtilisateurDAO.insertUtilisateur(u);
 	}
-	public void ConnexionUtilisateur(String identifiant, String mdp) {
-		this.UtilisateurDAO.connexion(identifiant, mdp);
+	public boolean ConnexionUtilisateur(String identifiant, String mdp) {
+		return this.UtilisateurDAO.connexion(identifiant, mdp);
 	}
 }

@@ -53,7 +53,7 @@ public class ServletInscription extends HttpServlet {
 		if(request.getServletPath().equals("/servletCreer")) {
 			if(request.getParameter("mot_de_passe").equals(request.getParameter("confirmation"))) {
 				
-				HttpSession session = request.getSession();
+				
 				
 				String pseudo="";
 				String nom ="";
@@ -65,6 +65,7 @@ public class ServletInscription extends HttpServlet {
 				String ville ="";
 				String mdp="";
 				int credit = 0;
+				RequestDispatcher rd;
 				
 				pseudo = request.getParameter("pseudo");
 				nom = request.getParameter("nom");
@@ -78,15 +79,17 @@ public class ServletInscription extends HttpServlet {
 				credit = 100;
 	
 				
-				UtilisateurManager utilisateurManager = new UtilisateurManager();
-				utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
-				
-				session.setAttribute("identifiant", pseudo);
-				session.setMaxInactiveInterval(300);
-	
-				request.setAttribute("identifiant", pseudo);
-				
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+				UtilisateurManager utilisateurManager = new UtilisateurManager();			
+				if(!utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit)) {
+					HttpSession session = request.getSession();
+					session.setAttribute("identifiant", pseudo);
+					session.setMaxInactiveInterval(300);	
+					request.setAttribute("identifiant", pseudo);
+					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+					
+				} else {
+					rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
+				}
 				rd.forward(request, response);
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");

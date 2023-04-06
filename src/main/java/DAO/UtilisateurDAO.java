@@ -6,11 +6,11 @@ import Class.Utilisateur;
 
 public interface UtilisateurDAO {
 	
-	public void insertUtilisateur (Utilisateur utilisateur);
+	public boolean insertUtilisateur (Utilisateur utilisateur);
 	public void deleteUtilisateur(int id);
 	public List<Utilisateur> selectAll();
 	public Utilisateur selectById(int id);
 	public void updateUtilisateur(int id);
-	public void connexion(String identifiant, String mdp);
+	public boolean connexion(String identifiant, String mdp);
 	
 }

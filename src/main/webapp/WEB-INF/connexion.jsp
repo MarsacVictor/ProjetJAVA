@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<form method="post" class="" action="servletConnexion" style=" width: 500px; display: block; margin: 0 auto; margin-top: 150px; ">
+			<form method="post" class="" action="servletConn" style=" width: 500px; display: block; margin: 0 auto; margin-top: 150px; ">
 
 				<div class="form-group row">
 					<label for="Identifiant" class="col-sm-2 col-form-label">Identifiant</label>
