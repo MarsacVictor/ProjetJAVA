@@ -20,15 +20,6 @@
 			<div class="col-lg-4"><h3>Prénom: </h3></div>
 			<div class="col-lg-8">X</div>
 			
-			<div class="col-lg-4"><h3>Email: </h3></div>
-			<div class="col-lg-8">X</div>
-			
-			<div class="col-lg-4"><h3>Teléphone: </h3></div>
-			<div class="col-lg-8">X</div>
-			
-			<div class="col-lg-4"><h3>Rue: </h3></div>
-			<div class="col-lg-8">X</div>
-			
 			<div class="col-lg-4"><h3>Code postal: </h3></div>
 			<div class="col-lg-8">X</div>
 			
