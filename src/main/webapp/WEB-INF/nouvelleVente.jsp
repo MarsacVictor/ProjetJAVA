@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Nouvelle Vente</title>
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
 </head>
 <body>
 	<div class="text-center"><h1>Nouvelle vente</h1></div>
@@ -68,6 +69,24 @@
 			<div class="form-group col-md-2"></div>
 			
 			<div class="form-group col-md-4"></div>
+			<div class="form-group col-md-6">
+				<label for="MiseaPrix"><h3>Début de l'enchère:</h3></label>
+				<div class="col-sm-10">
+					<input type="date" id="DebutEnchereDate" name="trip-start" value="2023-01-01" min="2023-01-01" max="2025-12-31">
+				</div>
+			</div>
+			<div class="form-group col-md-2"></div>
+			
+			<div class="form-group col-md-4"></div>
+			<div class="form-group col-md-6">
+				<label for="MiseaPrix"><h3>Fin de l'enchère:</h3></label>
+				<div class="col-sm-10">
+					<input type="date" id="FinEnchereDate" name="trip-start" value="2023-01-01" min="2023-01-01" max="2025-12-31">
+				</div>
+			</div>
+			<div class="form-group col-md-2"></div>
+			
+			<div class="form-group col-md-4"></div>
 			<div class="form-group col-md-6" style="border: 1px solid black">
 				<label for="Retrait"><h3>Retrait:</h3></label>
 				<div class="col-sm-10">
@@ -80,7 +99,14 @@
 				</div>
 			</div>
 			<div class="form-group col-md-2"></div>
-
+			
+			<div class="form-group col-md-4"></div>
+			<div class="form-group col-md-6">
+				<button type="submit" class="btn btn-secondary">Enregistrer</button>
+				<button type="submit" class="btn btn-secondary">Annuler</button>
+			</div>
+			<div class="form-group col-md-2"></div>
+			
 		</div>
 	</form>
 
