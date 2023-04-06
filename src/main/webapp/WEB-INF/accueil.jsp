@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%if (session.getAttribute("utilisateur") != null) {%> 
+    <%if (session.getAttribute("identifiant") != null) {%> 
     	<%@ include file="navbar_connecte.jsp" %>
     <%} else {%>
     		<%@ include file="navbar.jsp" %>	

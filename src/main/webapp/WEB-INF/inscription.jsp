@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%@ include file="navbar_connecte.jsp" %>
+     <%if (session.getAttribute("identifiant") != null) {%> 
+    	<%@ include file="navbar_connecte.jsp" %>
+    <%} else {%>
+    		<%@ include file="navbar.jsp" %>	
+    	<%} %>
 <!DOCTYPE html>
 <html>
 <head>

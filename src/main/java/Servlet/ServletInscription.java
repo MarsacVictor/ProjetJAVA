@@ -81,12 +81,10 @@ public class ServletInscription extends HttpServlet {
 				UtilisateurManager utilisateurManager = new UtilisateurManager();
 				utilisateurManager.AjouterUtilisateur(pseudo,nom, prenom, email,telephone, rue, code_postal, ville, mdp, credit);
 				
-				Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mdp, credit, '0');
-				
-				session.setAttribute("utilisateur", u);
+				session.setAttribute("identifiant", pseudo);
 				session.setMaxInactiveInterval(300);
 	
-				request.setAttribute("utilisateur", u);
+				request.setAttribute("identifiant", pseudo);
 				
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);
