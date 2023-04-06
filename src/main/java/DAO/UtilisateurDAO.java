@@ -11,5 +11,6 @@ public interface UtilisateurDAO {
 	public List<Utilisateur> selectAll();
 	public Utilisateur selectById(int id);
 	public void updateUtilisateur(int id);
+	public void connexion(String identifiant, String mdp);
 	
 }

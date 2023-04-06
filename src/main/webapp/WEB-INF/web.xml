@@ -124,4 +124,14 @@
     <servlet-name>ServletRedirectionNavBar</servlet-name>
     <url-pattern>/ServletRedirectionNavBar</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletConnexion</display-name>
+    <servlet-name>ServletConnexion</servlet-name>
+    <servlet-class>Servlet.ServletConnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConnexion</servlet-name>
+    <url-pattern>/ServletConnexion</url-pattern>
+  </servlet-mapping>
 </web-app>

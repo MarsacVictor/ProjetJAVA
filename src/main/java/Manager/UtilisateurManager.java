@@ -15,4 +15,7 @@ public class UtilisateurManager {
 		Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mdp, credit, '0');
 		this.UtilisateurDAO.insertUtilisateur(u);
 	}
+	public void ConnexionUtilisateur(String identifiant, String mdp) {
+		this.UtilisateurDAO.connexion(identifiant, mdp);
+	}
 }

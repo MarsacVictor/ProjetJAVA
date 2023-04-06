@@ -84,5 +84,11 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void connexion(String identifiant, String mdp) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

@@ -53,7 +53,7 @@ public class ServletInscription extends HttpServlet {
 		if(request.getServletPath().equals("/servletCreer")) {
 			if(request.getParameter("mot_de_passe").equals(request.getParameter("confirmation"))) {
 				
-				HttpSession session = request.getSession();		
+				HttpSession session = request.getSession();
 				
 				String pseudo="";
 				String nom ="";
