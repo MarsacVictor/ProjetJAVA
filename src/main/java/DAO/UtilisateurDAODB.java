@@ -46,7 +46,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 					pstmt.setString(7, utilisateur.getCode_postal());
 					pstmt.setString(8, utilisateur.getVille());
 					pstmt.setString(9, utilisateur.getMot_de_passe());	
-					pstmt.setInt(10, 5000);
+					pstmt.setInt(10, 100);
 					if (utilisateur.getAdministrateur() == '0') {
 						pstmt.setBoolean(11, false);	
 					} else {
