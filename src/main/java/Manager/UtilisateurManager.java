@@ -23,4 +23,10 @@ public class UtilisateurManager {
 		// TODO Auto-generated method stub
 		return this.UtilisateurDAO.selectById(identifiant);
 	}
+
+	public void modifierMonProfil(String pseudo, String email, String pseudo2, String prenom, String email2,
+			String telephone, String rue, String code_postal, String ville, String newMdp) {
+			this.UtilisateurDAO.updateUtilisateur(pseudo, email, pseudo2, prenom, email2, telephone,rue,code_postal,ville,newMdp);
+		
+	}
 }

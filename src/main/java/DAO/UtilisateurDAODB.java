@@ -3,6 +3,7 @@ package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 import Class.Utilisateur;
@@ -13,6 +14,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	private static final String CONNEXION = "select pseudo, email, mot_de_passe from UTILISATEURS where (pseudo = ? or email = ?) and mot_de_passe = ? ";
 	private static final String SELECT_ALL = "select * from UTILISATEURS";
 	private static final String SELECT_BY_ID = "select * from UTILISATEURS where pseudo = ? or email = ?";
+	private static final String UPDATE_UTILISATEUR = "UPDATE UTILISATEURS SET pseudo = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ?  WHERE pseudo = ? and email = ?";
 	
 	@Override
 	public boolean insertUtilisateur(Utilisateur utilisateur) {
@@ -139,8 +141,26 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	}
 
 	@Override
-	public void updateUtilisateur(int id) {
-		// TODO Auto-generated method stub
+	public void updateUtilisateur(String pseudo, String email, String pseudo2, String prenom, String email2,String telephone, String rue, String code_postal, String ville, String newMdp) {
+		
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(UPDATE_UTILISATEUR);
+			pstmt.setString(1, pseudo2);
+			pstmt.setString(2, prenom);
+			pstmt.setString(3, email2);
+			pstmt.setString(4, telephone);
+			pstmt.setString(5, rue);
+			pstmt.setString(6, code_postal);
+			pstmt.setString(7, ville);
+			pstmt.setString(8, newMdp);
+			pstmt.setString(9, pseudo);
+			pstmt.setString(10, email);			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

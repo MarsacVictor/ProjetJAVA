@@ -21,63 +21,56 @@
 				<div class="form-group col-md-6">
 					<label for="Pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("pseudo")%>" aria-label="Pseudo">
-					</div>
-				</div>
-			
-				<div class="form-group col-md-6">
-					<label for="Nom"><h3>Nom:</h3></label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("nom")%>" aria-label="Nom">
+						<input type="text" class="form-control" aria-label="Pseudo" id="pseudo" name="pseudo" value=<%= request.getAttribute("pseudo")%>>
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="Prenom"><h3>Prenom:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("prenom")%>" aria-label="Prenom ">
+						<input type="text" class="form-control" value="<%= request.getAttribute("prenom")%>" aria-label="Prenom" id="prenom" name="prenom">
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="Email"><h3>Email:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("email")%>" aria-label="Email">
+						<input type="text" class="form-control" value="<%= request.getAttribute("email")%>" aria-label="Email" id="email" name="email">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Telephone"><h3>Telephone:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("telephone")%>" aria-label="Telephone">
+						<input type="text" class="form-control" value="<%= request.getAttribute("telephone")%>" aria-label="Telephone" id="telephone" name="telephone">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Rue"><h3>Rue:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("rue")%>" aria-label="Rue">
+						<input type="text" class="form-control" value="<%= request.getAttribute("rue")%>" aria-label="Rue" id="rue" name="rue">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Code_Postal"><h3>Code Postal:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("code_postal")%>" aria-label="codepostal">
+						<input type="text" class="form-control" value="<%= request.getAttribute("code_postal")%>" aria-label="codepostal" id="code_postal" name="code_postal">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Ville"><h3>Ville:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="<%= request.getAttribute("ville")%>" aria-label="Ville">
+						<input type="text" class="form-control" value="<%= request.getAttribute("ville")%>" aria-label="Ville" id="ville" name="ville">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="MotDePasse"><h3>Mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse" required>
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse" required id="mot_de_passe" name="mot_de_passe">
 					</div>
 				</div>
 				
@@ -87,14 +80,14 @@
 				<div class="form-group col-md-6">
 					<label for="News_MotDePasse"><h3>Nouveau mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="News_MotDePasse">
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="News_MotDePasse" id="new_mot_de_passe" name="new_mot_de_passe">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Confirmation"><h3>Confirmation:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation">
+						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation" id="confirmation" name="confirmation">
 					</div>
 				</div>
 				
