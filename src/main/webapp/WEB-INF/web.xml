@@ -164,4 +164,14 @@
     <servlet-name>ServletRedirectionEncheres</servlet-name>
     <url-pattern>/ServletRedirectionEncheres</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSuppressionCompte</display-name>
+    <servlet-name>ServletSuppressionCompte</servlet-name>
+    <servlet-class>Servlet.ServletSuppressionCompte</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSuppressionCompte</servlet-name>
+    <url-pattern>/ServletSuppressionCompte</url-pattern>
+  </servlet-mapping>
 </web-app>
