@@ -35,7 +35,6 @@ public class ServletAccueil extends HttpServlet {
 		CategorieManager CategorieManager = new CategorieManager();			
 		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
 		request.setAttribute("listCategorie", listC);
-		System.out.println(listC);
 		request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 	}
 

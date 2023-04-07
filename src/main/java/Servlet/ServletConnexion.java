@@ -9,7 +9,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
+import Class.Categorie;
+import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
 /**
@@ -47,6 +50,9 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		CategorieManager CategorieManager = new CategorieManager();			
+		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+		request.setAttribute("listCategorie", listC);
 		 if(request.getServletPath().equals("/servletConn")) {
 			 RequestDispatcher rd;
 				String identifiant="";

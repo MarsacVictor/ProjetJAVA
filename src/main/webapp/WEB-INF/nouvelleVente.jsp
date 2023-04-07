@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="Class.Categorie" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,11 +41,9 @@
 				<div class="col-sm-10">
 					  <select class="custom-select my-1 mr-sm-2" id="categorie" required>
 					    <option selected>Catégorie</option>
-					        <option value="1">Toutes</option>
-					        <option value="2">Informatique</option>
-					        <option value="3">Ameublement</option>
-					        <option value="4">Vêtement</option>
-					        <option value="5">Sport&Loisirs</option>
+					        <%for(Categorie c : (List<Categorie>)request.getAttribute("listCategorie")) {%>
+					        	<option value=<%= c.getLibelle() %>><%= c.getLibelle() %></option>
+					        <%} %>
 					  </select>
 				</div>
 			</div>

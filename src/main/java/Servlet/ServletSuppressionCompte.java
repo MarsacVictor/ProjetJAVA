@@ -9,7 +9,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
+import Class.Categorie;
+import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
 /**
@@ -41,6 +44,9 @@ public class ServletSuppressionCompte extends HttpServlet {
 			rd.forward(request, response);
 		}
 		else if(request.getServletPath().equals("/suppression")){
+			CategorieManager CategorieManager = new CategorieManager();			
+			List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+			request.setAttribute("listCategorie", listC);
 			HttpSession session = request.getSession();
 			UtilisateurManager utilisateurManager = new UtilisateurManager();	
 			utilisateurManager.supprimerUtilisateur((String)session.getAttribute("identifiant"));

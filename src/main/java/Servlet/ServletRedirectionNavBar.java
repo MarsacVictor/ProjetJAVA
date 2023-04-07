@@ -9,8 +9,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
+import Class.Categorie;
 import Class.Utilisateur;
+import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
 /**
@@ -48,7 +51,10 @@ public class ServletRedirectionNavBar extends HttpServlet {
 				rd.forward(request, response);
 	     }
 		 else if(request.getServletPath().equals("/DirectionVendreUnArticle")){
-	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/nouvelleVente.jsp");
+			CategorieManager CategorieManager = new CategorieManager();			
+			List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+			request.setAttribute("listCategorie", listC);
+	    	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/nouvelleVente.jsp");
 			rd.forward(request, response); 
 	     }
 		 else if(request.getServletPath().equals("/DirectionMonProfil")){
@@ -72,6 +78,9 @@ public class ServletRedirectionNavBar extends HttpServlet {
 			rd.forward(request, response); 
 	     }
 		 else if(request.getServletPath().equals("/DirectionAccueil")){
+			 CategorieManager CategorieManager = new CategorieManager();			
+			 List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+			 request.setAttribute("listCategorie", listC);
 	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response); 
 	     }

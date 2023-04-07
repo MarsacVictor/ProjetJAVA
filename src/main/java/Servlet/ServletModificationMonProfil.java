@@ -9,8 +9,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
+import Class.Categorie;
 import Class.Utilisateur;
+import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
 /**
@@ -43,6 +46,9 @@ public class ServletModificationMonProfil extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		CategorieManager CategorieManager = new CategorieManager();			
+		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+		request.setAttribute("listCategorie", listC);
 		
 		 RequestDispatcher rd = null;
 		 HttpSession session = request.getSession();

@@ -7,6 +7,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
+
+import Class.Categorie;
+import Manager.CategorieManager;
 
 /**
  * Servlet implementation class ServletRedirectionRetour
@@ -32,6 +36,9 @@ public class ServletRedirectionRetour extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 if(request.getServletPath().equals("/retourAccueil")) {
+			 	CategorieManager CategorieManager = new CategorieManager();			
+				List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+				request.setAttribute("listCategorie", listC);
 	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);
 	     }
