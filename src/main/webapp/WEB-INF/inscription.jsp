@@ -100,6 +100,12 @@
                     <a href="${pageContext.request.contextPath}/servletAnnuler"><button type="submit" class="btn btn-secondary">Annuler</button></a>
 				</div>
 			</form>
+			<% if (request.getAttribute("error") != null) {%> 
+				<%= request.getAttribute("error")  %>
+			<%} %>
+			<% if (request.getAttribute("error2") != null) {%> 
+				<%= request.getAttribute("error2")  %>
+			<%} %>
 		</div>
 	</div>
 </body>

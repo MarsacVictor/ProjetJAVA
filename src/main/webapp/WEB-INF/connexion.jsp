@@ -44,6 +44,9 @@
 			</form>
 		</div>
 	</div>
+	<% if (request.getAttribute("error") != null) {%> 
+				<%= request.getAttribute("error")  %>
+	<%} %>
 	<div class="text-center"><a href=""><button type="button" class="btn btn-secondary" style="margin-left:50px;">Mot de passe oublié</button></a></div>
 	<div class="text-center"><a href="${pageContext.request.contextPath}/servletInscription"><button type="button" class="btn btn-secondary">Créer compte</button></a></div>
 </body>

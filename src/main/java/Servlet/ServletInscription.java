@@ -69,7 +69,7 @@ public class ServletInscription extends HttpServlet {
 				String ville ="";
 				String mdp="";
 				int credit = 0;
-				RequestDispatcher rd;
+				RequestDispatcher rd = null;
 				
 				pseudo = request.getParameter("pseudo");
 				nom = request.getParameter("nom");
@@ -92,12 +92,14 @@ public class ServletInscription extends HttpServlet {
 					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 					
 				} else {
+					request.setAttribute("error2", "L'email ou le pseudo existe déjà !");
+					rd.forward(request, response);
 					rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
 				}
 				rd.forward(request, response);
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
-				System.err.println("Les deux mots de passe sont différent !");
+				request.setAttribute("error", "Les deux mots de passe sont différent !");
 				rd.forward(request, response);
 			}
 		}

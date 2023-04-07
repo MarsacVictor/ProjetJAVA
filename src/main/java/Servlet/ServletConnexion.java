@@ -69,6 +69,7 @@ public class ServletConnexion extends HttpServlet {
 					request.setAttribute("identifiant", identifiant);
 					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				} else {
+					request.setAttribute("error", "Mauvais identifiant ou mot de passe !");
 					rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
 				}	
 				rd.forward(request, response);
