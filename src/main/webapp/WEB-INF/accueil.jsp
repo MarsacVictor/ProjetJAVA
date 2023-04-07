@@ -113,7 +113,11 @@
 				         	<img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
 				        </div>
 				        <div class="col-sm-7">
-				        	<h5 class="card-title">Titre carte</h5>
+				        	<h5 class="card-title">
+								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres"> <%}%>
+									Titre carte
+								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</h5>
 				        	<p>Prix: X</p>
 				        	<p>Fin de l'enchère: X</p>
 				        	<p>Vendeur: X</p>
@@ -128,7 +132,11 @@
 				         	<img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
 				        </div>
 				        <div class="col-sm-7">
-				        	<h5 class="card-title">Titre carte</h5>
+				        	<h5 class="card-title">
+								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres"> <%}%>
+									Titre carte
+								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</h5>
 				        	<p>Prix: X</p>
 				        	<p>Fin de l'enchère: X</p>
 				        	<p>Vendeur: X</p>
@@ -143,7 +151,15 @@
 				         	<img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
 				        </div>
 				        <div class="col-sm-7">
-				        	<h5 class="card-title">Titre carte</h5>
+				        	<h5 class="card-title">
+								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres"> <%}%>
+									Titre carte
+								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</h5>
+
+				        	
+				        	
+				        	
 				        	<p>Prix: X</p>
 				        	<p>Fin de l'enchère: X</p>
 				        	<p>Vendeur: X</p>
