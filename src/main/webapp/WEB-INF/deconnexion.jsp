@@ -13,10 +13,10 @@
 		<br>
 		<h6>Confirmer votre déconnexion</h6>
 	</div>
-	<div class="container">
+	<div class="container" style=" display: flex; margin: 0 auto; width: 500px; justify-content: center; ">
 		<div class="row">
-			<div class="col-lg-6"><a href="${pageContext.request.contextPath}/deconnexion"><button type="button" class="btn btn-secondary">Déconnexion</button></a></div>
-			<div class="col-lg-6"><a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a></div>
+			<a href="${pageContext.request.contextPath}/deconnexion"><button type="button" class="btn btn-secondary" style="margin-right: 20px;">Déconnexion</button></a>
+			<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 		</div>
 	</div>
 </body>
