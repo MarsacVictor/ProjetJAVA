@@ -101,7 +101,7 @@
 			</div>
 				<div class="text-center">
 					<button type="submit" class="btn btn-secondary">Enregistrer</button>
-					<a href="${pageContext.request.contextPath}/retourAccueil"><button type="submit" class="btn btn-secondary">Supprimer mon compte</button></a>
+					<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Supprimer mon compte</button></a>
 				</div>
 			</form>
 		</div>
