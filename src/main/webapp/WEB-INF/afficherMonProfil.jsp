@@ -20,7 +20,7 @@
 			<div class="col-lg-4"><h3>Prénom: </h3></div>
 			<div class="col-lg-8"><%= request.getAttribute("prenom")%></div>
 			
-			<div class="col-lg-4"><h3>Code postal: </h3></div>
+			<div class="col-lg-4"><h3 style=" width: 160px;">Code postal: </h3></div>
 			<div class="col-lg-8"><%= request.getAttribute("code_postal")%></div>
 			
 			<div class="col-lg-4"><h3>Ville: </h3></div>

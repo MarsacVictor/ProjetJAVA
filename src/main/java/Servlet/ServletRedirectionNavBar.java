@@ -43,7 +43,7 @@ public class ServletRedirectionNavBar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 if(request.getServletPath().equals("/DirectionEncheres")) {
-	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/mesEncheres.jsp");
 				rd.forward(request, response);
 	     }
 		 else if(request.getServletPath().equals("/DirectionVendreUnArticle")){

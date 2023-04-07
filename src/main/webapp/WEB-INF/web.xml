@@ -154,4 +154,14 @@
     <servlet-name>ServletDeconn</servlet-name>
     <url-pattern>/ServletDeconn</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletRedirectionEncheres</display-name>
+    <servlet-name>ServletRedirectionEncheres</servlet-name>
+    <servlet-class>Servlet.ServletRedirectionEncheres</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRedirectionEncheres</servlet-name>
+    <url-pattern>/ServletRedirectionEncheres</url-pattern>
+  </servlet-mapping>
 </web-app>

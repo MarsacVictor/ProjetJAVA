@@ -12,9 +12,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<a class="navbar-brand mt-2 mt-lg-0" href="${pageContext.request.contextPath}/DirectionAccueil"> <img
-				src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-				height="15" alt="Logo ENI-Enchères"/>
+			<a class="navbar-brand mt-2 mt-lg-0" href="${pageContext.request.contextPath}/DirectionAccueil">
+			<img src="Image/logoENIEncheres.png" height="60" alt="Logo ENI-Enchères"/>
 			</a>
 	    </div>
 	
