@@ -96,7 +96,7 @@
 				
 			</div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-secondary">Créer</button>
+					<button type="submit" class="btn btn-secondary" id="cr">Créer</button>
                     <a href="${pageContext.request.contextPath}/servletAnnuler"><button type="submit" class="btn btn-secondary">Annuler</button></a>
 				</div>
 			</form>
