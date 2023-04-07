@@ -27,7 +27,7 @@
 				<div class="form-group col-md-6">
 					<label for="pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo" required>
+						<input type="text" class="form-control" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo" required>
 					</div>
 				</div>
 			
@@ -48,7 +48,7 @@
 				<div class="form-group col-md-6">
 					<label for="email"><h3>Email:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" pattern="^[^0-9@]*@[^@]*$" placeholder="Email" aria-label="email" name="email" id="email" required>
+						<input type="text" class="form-control" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email" aria-label="email" name="email" id="email" required>
 					</div>
 				</div>
 			
@@ -62,21 +62,21 @@
 				<div class="form-group col-md-6">
 					<label for="rue"><h3>Rue:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Rue" aria-label="rue" name="rue" id="rue">
+						<input type="text" class="form-control" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÀ-ÿ\s.'-]{2,30}$" placeholder="Rue" aria-label="rue" name="rue" id="rue">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="code_postal"><h3>Code Postal:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" pattern="^\d{5}$" placeholder="Code postal" aria-label="code_postal" name="code_postal" id="code_postal">
+						<input type="text" class="form-control" pattern="^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$" placeholder="Code postal" aria-label="code_postal" name="code_postal" id="code_postal">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="ville"><h3>Ville:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
+						<input type="text" class="form-control" pattern="^[a-zA-ZÀ-ÿ]+(?:[\s-][a-zA-ZÀ-ÿ]+)*$" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
 					</div>
 				</div>
 			
