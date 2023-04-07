@@ -6,7 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
+
+import Manager.UtilisateurManager;
 
 /**
  * Servlet implementation class ServletSuppressionCompte
@@ -35,7 +39,15 @@ public class ServletSuppressionCompte extends HttpServlet {
 		if(request.getServletPath().equals("/RedirectionSuppression")) {
         	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/supprimerCompte.jsp");
 			rd.forward(request, response);
-     }
+		}
+		else if(request.getServletPath().equals("/suppression")){
+			HttpSession session = request.getSession();
+			UtilisateurManager utilisateurManager = new UtilisateurManager();	
+			utilisateurManager.supprimerUtilisateur((String)session.getAttribute("identifiant"));
+			session.invalidate();
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 	/**

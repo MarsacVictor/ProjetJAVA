@@ -15,6 +15,8 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	private static final String SELECT_ALL = "select * from UTILISATEURS";
 	private static final String SELECT_BY_ID = "select * from UTILISATEURS where pseudo = ? or email = ?";
 	private static final String UPDATE_UTILISATEUR = "UPDATE UTILISATEURS SET pseudo = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ?  WHERE pseudo = ? and email = ?";
+	private static final String DELETE_UTILISATEUR_BY_ID = "DELETE FROM UTILISATEURS WHERE pseudo = ? ";
+
 	
 	@Override
 	public boolean insertUtilisateur(Utilisateur utilisateur) {
@@ -156,6 +158,20 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 			pstmt.setString(10, email);			
 			pstmt.executeUpdate();
 			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Override
+	public void supprimerUtilisateur(String pseudo) {
+		
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(DELETE_UTILISATEUR_BY_ID);
+			pstmt.setString(1, pseudo);	
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
