@@ -27,9 +27,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				
 				List<Utilisateur> listesUtilisateur = new ArrayList<Utilisateur>();
 				listesUtilisateur = this.selectAll();
-				System.out.println(listesUtilisateur);
 				for (Utilisateur u : listesUtilisateur) {
-					System.out.println();
 		            if(u.getEmail().equals(utilisateur.getEmail()) || u.getPseudo().equals(utilisateur.getPseudo())) {
 		            	notInsert = true;
 		            }

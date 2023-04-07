@@ -56,7 +56,6 @@ public class ServletConnexion extends HttpServlet {
 				mdp = request.getParameter("motdepasse");
 				
 				UtilisateurManager utilisateurManager = new UtilisateurManager();
-				System.out.println(utilisateurManager.ConnexionUtilisateur(identifiant, mdp));
 				if(utilisateurManager.ConnexionUtilisateur(identifiant, mdp)) {
 					HttpSession session = request.getSession();
 					session.setAttribute("identifiant", identifiant);

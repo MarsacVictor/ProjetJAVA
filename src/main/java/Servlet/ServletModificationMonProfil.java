@@ -65,7 +65,6 @@ public class ServletModificationMonProfil extends HttpServlet {
 		 if(utilisateurManager.ConnexionUtilisateur(realPseudo, mdp)) {
 			 Utilisateur u = utilisateurManager.selectionnerUtilisateur(realPseudo);
 			 if(newMdp.equals(confirmation)) {
-				 System.out.println('t');
 				 utilisateurManager.modifierMonProfil(u.getPseudo(), u.getEmail(), pseudo, prenom, email, telephone,rue,code_postal,ville,newMdp );
 				 rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			 } else {
