@@ -27,5 +27,8 @@
 			<div class="col-lg-8">X</div>
 		</div>
 	</div>
+	<div class="text-center" style="margin-top:50px;">
+		<a href="${pageContext.request.contextPath}/retourAccueil"><button type="submit" class="btn btn-secondary">Annuler</button></a>
+	</div>
 </body>
 </html>

@@ -24,7 +24,8 @@ import Manager.UtilisateurManager;
 						"/DirectionMonProfil",
 						"/DirectionAccueil",
 						"/DirectionDeconnexion",
-						"/modifierProfil"
+						"/modifierProfil",
+						"/DirectionProfilUtilisateur"
 		})
 public class ServletRedirectionNavBar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -72,6 +73,10 @@ public class ServletRedirectionNavBar extends HttpServlet {
 	     }
 		 else if(request.getServletPath().equals("/DirectionAccueil")){
 	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd.forward(request, response); 
+	     }
+		 else if(request.getServletPath().equals("/DirectionProfilUtilisateur")){
+	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfilUtilisateur.jsp");
 			rd.forward(request, response); 
 	     }
 		 else if(request.getServletPath().equals("/DirectionConnexion")){

@@ -66,35 +66,35 @@
 						<input type="text" class="form-control" value="<%= request.getAttribute("ville")%>" aria-label="Ville" id="ville" name="ville">
 					</div>
 				</div>
-			
+
+					<div class="form-group col-md-6">
+						<label for="Confirmation"><h3>Crédit:</h3></label>
+						<div class="col-sm-10">
+							<input type="text" readonly class="form-control-plaintext"
+								placeholder="<%=request.getAttribute("credit")%>">
+						</div>
+					</div>
+
 				<div class="form-group col-md-6">
 					<label for="MotDePasse"><h3>Mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse" required id="mot_de_passe" name="mot_de_passe">
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="MotDePasse" required id="mot_de_passe" name="mot_de_passe" required>
 					</div>
 				</div>
 				
-				<div class="form-group col-md-6">
-				</div>
+				<div class="form-group col-md-6"></div>
 				
 				<div class="form-group col-md-6">
 					<label for="News_MotDePasse"><h3>Nouveau mot de passe:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="News_MotDePasse" id="new_mot_de_passe" name="new_mot_de_passe">
+						<input type="password" class="form-control" placeholder="Mot de passe" aria-label="News_MotDePasse" id="new_mot_de_passe" name="new_mot_de_passe" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
 					<label for="Confirmation"><h3>Confirmation:</h3></label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation" id="confirmation" name="confirmation">
-					</div>
-				</div>
-				
-				<div class="form-group col-md-6">
-					<label for="Confirmation"><h3>Crédit:</h3></label>
-					<div class="col-sm-10">
-						<input type="text" readonly class="form-control-plaintext" placeholder="<%= request.getAttribute("credit")%>">
+						<input type="password" class="form-control" placeholder="Confirmation" aria-label="Confirmation" id="confirmation" name="confirmation" required>
 					</div>
 				</div>
 				

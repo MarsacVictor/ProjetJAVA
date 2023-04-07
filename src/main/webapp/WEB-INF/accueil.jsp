@@ -120,8 +120,11 @@
 							</h5>
 				        	<p>Prix: X</p>
 				        	<p>Fin de l'enchère: X</p>
-				        	<p>Vendeur: X</p>
-				        </div>
+				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
+											X
+										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</p>
+						</div>
 					</div>
 				</div>	
 			</div>
@@ -139,7 +142,10 @@
 							</h5>
 				        	<p>Prix: X</p>
 				        	<p>Fin de l'enchère: X</p>
-				        	<p>Vendeur: X</p>
+			        	 	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
+										X
+									<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</p>
 				        </div>
 					</div>
 				</div>	
@@ -162,7 +168,10 @@
 				        	
 				        	<p>Prix: X</p>
 				        	<p>Fin de l'enchère: X</p>
-				        	<p>Vendeur: X</p>
+			        	 	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
+										X
+									<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</p>
 				        </div>
 					</div>
 				</div>	
