@@ -5,7 +5,8 @@
     <%} else {%>
     		<%@ include file="navbar.jsp" %>	
     	<%} %>
-
+<%@ page import="java.util.List" %>
+<%@ page import="Class.Categorie" %>
 
 <!DOCTYPE html>
 <html>
@@ -39,17 +40,15 @@
 		<div class="row">
 			<div>
 				<h3 style="color: #F2913D">Catégorie : </h3>
-			</div>
+			</div>		
 			<form style="margin-left: 50px;">
 				<div class="form-row">
 					<div class="col-auto my-1">
 					      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="border: 3px solid #f2913d">
 					        <option selected>Choisir</option>
-					        <option value="1">Toutes</option>
-					        <option value="2">Informatique</option>
-					        <option value="3">Ameublement</option>
-					        <option value="4">Vêtement</option>
-					        <option value="5">Sport&Loisirs</option>
+					        <%for(Categorie c : (List<Categorie>)request.getAttribute("listCategorie")) {%>
+					        	<option value=<%= c.getLibelle() %>><%= c.getLibelle() %></option>
+					        <%} %>
 					      </select>
 					</div>
 				</div>
