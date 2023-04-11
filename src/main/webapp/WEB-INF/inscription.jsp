@@ -25,28 +25,28 @@
 			<div class="form-row" style="width: 1200px;">
 			
 				<div class="form-group col-md-6">
-					<label for="pseudo"><h3>Pseudo:</h3></label>
+					<label for="pseudo"><h3>Pseudo<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="nom"><h3>Nom:</h3></label>
+					<label for="nom"><h3>Nom<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[^0-9]{2,}$" placeholder="Nom" aria-label="nom" name="nom" id="nom" required>
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
-					<label for="prenom"><h3>Prenom:</h3></label>
+					<label for="prenom"><h3>Prenom<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[^0-9]{2,}$" placeholder="Prenom" aria-label="prenom" name="prenom" id="prenom" required>
 					</div>
 				</div>
 				
 				<div class="form-group col-md-6">
-					<label for="email"><h3>Email:</h3></label>
+					<label for="email"><h3>Email<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email" aria-label="email" name="email" id="email" required>
 					</div>
@@ -60,40 +60,40 @@
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="rue"><h3>Rue:</h3></label>
+					<label for="rue"><h3>Rue<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÀ-ÿ\s.'-]{2,30}$" placeholder="Rue" aria-label="rue" name="rue" id="rue">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="code_postal"><h3>Code Postal:</h3></label>
+					<label for="code_postal"><h3>Code Postal<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$" placeholder="Code postal" aria-label="code_postal" name="code_postal" id="code_postal">
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="ville"><h3>Ville:</h3></label>
+					<label for="ville"><h3>Ville<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[a-zA-ZÀ-ÿ]+(?:[\s-][a-zA-ZÀ-ÿ]+)*$" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="mot_de_passe"><h3>Mot de passe:</h3></label>
+					<label for="mot_de_passe"><h3>Mot de passe<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{12,}$" placeholder="Mot de passe" aria-label="mot_de_passe" name="mot_de_passe" id="mot_de_passe" required>
 					</div>
 				</div>
 			
 				<div class="form-group col-md-6">
-					<label for="confirmation"><h3>Confirmation:</h3></label>
+					<label for="confirmation"><h3>Confirmation<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{12,}$" placeholder="Confirmation" aria-label="Confirmation" name="confirmation" id="confirmation" required>
 					</div>
 				</div>
-				
+				<div><h6><span style="color: red;font-size:20px;position: relative;top: -12px;">*</span> Champs obligatoire</h6></div>
 			</div>
 				<div class="text-center">
 					<button type="submit" class="btn btn-secondary" id="cr">Créer</button>
