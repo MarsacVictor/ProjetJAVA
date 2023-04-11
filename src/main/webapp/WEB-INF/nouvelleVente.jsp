@@ -90,11 +90,11 @@
 			<div class="form-group col-md-6" style="border: 1px solid black">
 				<label for="Retrait"><h3>Retrait:</h3></label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="<%= request.getAttribute("rue")%>" name="rue" id="rue" aria-label="Rue" required>
+					<input type="text" class="form-control" value="<%= request.getAttribute("rue")%>" name="rue" id="rue" aria-label="Rue" required>
 					<br>
-					<input type="text" class="form-control" placeholder="<%= request.getAttribute("code_postal")%>" name="code_postal" id="code_postal" aria-label="codePostal" required>
+					<input type="text" class="form-control" value="<%= request.getAttribute("code_postal")%>" name="code_postal" id="code_postal" aria-label="codePostal" required>
 					<br>
-					<input type="text" class="form-control" placeholder="<%= request.getAttribute("ville")%>" aria-label="Ville" name="ville" id="ville" required>
+					<input type="text" class="form-control" value="<%= request.getAttribute("ville")%>" aria-label="Ville" name="ville" id="ville" required>
 					<br>
 				</div>
 			</div>

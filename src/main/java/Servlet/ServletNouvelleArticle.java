@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -58,16 +58,17 @@ public class ServletNouvelleArticle extends HttpServlet {
 		String nomArticle =request.getParameter("article");
 		String description =request.getParameter("description");
 		String categorie = request.getParameter("categorie");
-		Date dateStart = null;
-		Date dateEnd = null;
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
 		System.out.println(request.getParameter("dateStart"));
+		System.out.println(request.getParameter("dateEnd"));
 		try {
-			dateStart = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(request.getParameter("dateStart"));
-			dateEnd = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(request.getParameter("dateEnd"));
+			System.out.println(dateFormat.parse(request.getParameter("dateStart")));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		String rue = request.getParameter("rue");
 		String code_postal = request.getParameter("code_postal");
 		String ville = request.getParameter("ville");
@@ -75,7 +76,12 @@ public class ServletNouvelleArticle extends HttpServlet {
 		RequestDispatcher rd = null;
 								
 		ArticleManager articleManager = new ArticleManager();
-		articleManager.insertArticle(nomArticle, description, categorie, prix, dateStart, dateEnd, rue, code_postal, ville, u);
+		try {
+			articleManager.insertArticle(nomArticle, description, categorie, prix, dateFormat.parse(request.getParameter("dateStart")), dateFormat.parse(request.getParameter("dateEnd")), rue, code_postal, ville, u);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 		rd.forward(request, response);
 		}

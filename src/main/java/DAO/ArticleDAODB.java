@@ -1,9 +1,9 @@
 package DAO;
 
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,7 @@ import Class.Retrait;
 public class ArticleDAODB implements ArticleDAO{
 	
 	private static final String INSERT_ARTICLE = "insert into ARTICLES_VENDUS(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie) values(?, ?, ?, ?, ?, ?, ?, ?);";
-	private static final String INSERT_RETRAIT = "insert into UTILISATEURS(no_article, rue, code_postal, ville) values(?, ?, ?, ?);";
+	private static final String INSERT_RETRAIT = "insert into RETRAITS(no_article, rue, code_postal, ville) values(?, ?, ?, ?);";
 	private static final String SELECT_LAST_ROW = "SELECT MAX(no_article) FROM ARTICLES_VENDUS";
 	private static final String SELECT_UTILISATEUR_BY_ID = "SELECT no_utilisateur FROM UTILISATEURS WHERE pseudo= ? or email= ?";
 	private static final String SELECT_CATEGORIE_BY_ID = "SELECT no_categorie FROM CATEGORIES WHERE libelle= ?";
@@ -36,8 +36,8 @@ public class ArticleDAODB implements ArticleDAO{
 				pstmt = cnx.prepareStatement(INSERT_ARTICLE, PreparedStatement.RETURN_GENERATED_KEYS);
 				pstmt.setString(1, r.getArticle().getNomArticle());
 				pstmt.setString(2, r.getArticle().getDescription());
-				pstmt.setDate(3, (Date) r.getArticle().getDateDebutEncheres());
-				pstmt.setDate(4, (Date) r.getArticle().getDateFinEncheres());
+				pstmt.setObject(3, r.getArticle().getDateDebutEncheres());
+				pstmt.setObject(4, r.getArticle().getDateFinEncheres());
 				pstmt.setInt(5, r.getArticle().getPrixInitial());
 				pstmt.setInt(6, r.getArticle().getPrixVente());
 				pstmt.setInt(7, noUtilisateur);
@@ -51,18 +51,9 @@ public class ArticleDAODB implements ArticleDAO{
 				}
 				rs.close();
 				pstmt.close();
-				
-				PreparedStatement pstmt2;
-				ResultSet rs2;
-				pstmt2 = cnx.prepareStatement(INSERT_RETRAIT, PreparedStatement.RETURN_GENERATED_KEYS);
-				pstmt2.setString(1, r.getArticle().getNomArticle());
-				pstmt2.setString(2, r.getArticle().getDescription());
-				pstmt2.setDate(3, (Date) r.getArticle().getDateDebutEncheres());
-				pstmt2.setDate(4, (Date) r.getArticle().getDateFinEncheres());
-				pstmt2.executeUpdate();
-				rs2 = pstmt.getGeneratedKeys();
-				rs2.close();
-				pstmt2.close();
+				cnx.commit();
+				r.setArticle(article);
+				this.insertRetrait(r);
 				
 			} catch(Exception e) {
 				e.printStackTrace();
@@ -140,6 +131,34 @@ public class ArticleDAODB implements ArticleDAO{
 			e.printStackTrace();			
 		}
 		return u;
+	}
+	
+	public void insertRetrait(Retrait r) {
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try {
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(INSERT_RETRAIT, PreparedStatement.RETURN_GENERATED_KEYS);
+				pstmt.setInt(1, r.getArticle().getNoArticle());
+				pstmt.setString(2, r.getArticle().getUtilisateur().getRue());
+				pstmt.setString(3, r.getArticle().getUtilisateur().getCode_postal());
+				pstmt.setString(4, r.getArticle().getUtilisateur().getVille());
+				pstmt.executeUpdate();
+				rs = pstmt.getGeneratedKeys();
+				rs.close();
+				pstmt.close();
+				cnx.commit();
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+				cnx.rollback();
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
 	}
 
 }
