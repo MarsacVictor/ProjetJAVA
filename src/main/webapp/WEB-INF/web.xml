@@ -174,4 +174,24 @@
     <servlet-name>ServletSuppressionCompte</servlet-name>
     <url-pattern>/ServletSuppressionCompte</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletNouvelleVente</display-name>
+    <servlet-name>ServletNouvelleVente</servlet-name>
+    <servlet-class>Servlet.ServletNouvelleVente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNouvelleVente</servlet-name>
+    <url-pattern>/ServletNouvelleVente</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletNouvelleArticle</display-name>
+    <servlet-name>ServletNouvelleArticle</servlet-name>
+    <servlet-class>Servlet.ServletNouvelleArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletNouvelleArticle</servlet-name>
+    <url-pattern>/ServletNouvelleArticle</url-pattern>
+  </servlet-mapping>
 </web-app>

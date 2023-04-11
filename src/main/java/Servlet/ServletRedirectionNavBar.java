@@ -51,6 +51,13 @@ public class ServletRedirectionNavBar extends HttpServlet {
 				rd.forward(request, response);
 	     }
 		 else if(request.getServletPath().equals("/DirectionVendreUnArticle")){
+			HttpSession session = request.getSession();
+			UtilisateurManager utilisateurManager = new UtilisateurManager();			
+			Utilisateur u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
+			request.setAttribute("pseudo", u.getPseudo());
+			request.setAttribute("code_postal", u.getCode_postal());
+			request.setAttribute("ville", u.getVille());
+			request.setAttribute("rue", u.getRue());
 			CategorieManager CategorieManager = new CategorieManager();			
 			List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
 			request.setAttribute("listCategorie", listC);
@@ -59,15 +66,15 @@ public class ServletRedirectionNavBar extends HttpServlet {
 	     }
 		 else if(request.getServletPath().equals("/DirectionMonProfil")){
 			 HttpSession session = request.getSession();
-			 
 			 UtilisateurManager utilisateurManager = new UtilisateurManager();			
 			 Utilisateur u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
+			 System.out.println(u.getEmail());
 			 request.setAttribute("pseudo", u.getPseudo());
 			 request.setAttribute("nom", u.getNom());
 			 request.setAttribute("prenom", u.getPrenom());
 			 request.setAttribute("code_postal", u.getCode_postal());
 			 request.setAttribute("ville", u.getVille());
-			 
+			 request.setAttribute("rue", u.getRue());
 			 
 			 
 			 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherMonProfil.jsp");

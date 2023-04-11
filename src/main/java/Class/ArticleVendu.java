@@ -1,5 +1,5 @@
 package Class;
-import java.sql.Date;
+import java.util.Date;
 /**
  * La classe ArticleVendu représente un article vendu aux enchères.
  * 
@@ -40,6 +40,46 @@ public class ArticleVendu {
 		this.prixVente = prixVente;
 		this.utilisateur = utilisateur;
 		this.categorie = categorie;
+	}
+
+	public int getNoArticle() {
+		return noArticle;
+	}
+
+	public String getNomArticle() {
+		return nomArticle;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public Date getDateDebutEncheres() {
+		return dateDebutEncheres;
+	}
+
+	public Date getDateFinEncheres() {
+		return dateFinEncheres;
+	}
+
+	public int getPrixInitial() {
+		return prixInitial;
+	}
+
+	public int getPrixVente() {
+		return prixVente;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setNoArticle(int noArticle) {
+		this.noArticle = noArticle;
 	}
 
 	/**

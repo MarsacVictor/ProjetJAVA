@@ -1,7 +1,6 @@
 package DAO;
 
 import java.util.List;
-
 import Class.Utilisateur;
 
 public interface UtilisateurDAO {

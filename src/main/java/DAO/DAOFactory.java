@@ -11,6 +11,9 @@ public abstract class DAOFactory {
 	{
 		return new UtilisateurDAODB();
 	}
-	
+	public static ArticleDAO getArticleDAO()
+	{
+		return new ArticleDAODB();
+	}
 }
 	
