@@ -28,6 +28,10 @@
 					<label for="pseudo"><h3>Pseudo<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" placeholder="Pseudo" aria-label="pseudo" name="pseudo" id="pseudo" required>
+						   <% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("pseudo") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec un Pseudo valide</span>
+				        <% } } %>
 					</div>
 				</div>
 			
@@ -35,6 +39,10 @@
 					<label for="nom"><h3>Nom<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[^0-9]{2,}$" placeholder="Nom" aria-label="nom" name="nom" id="nom" required>
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("nom") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec un Nom valide</span>
+				        <% } } %>
 					</div>
 				</div>
 				
@@ -42,6 +50,10 @@
 					<label for="prenom"><h3>Prenom<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[^0-9]{2,}$" placeholder="Prenom" aria-label="prenom" name="prenom" id="prenom" required>
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("prenom") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec un Prenom valide</span>
+				        <% } } %>
 					</div>
 				</div>
 				
@@ -49,6 +61,10 @@
 					<label for="email"><h3>Email<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email" aria-label="email" name="email" id="email" required>
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("email") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec un Email valide</span>
+				        <% } } %>
 					</div>
 				</div>
 			
@@ -63,6 +79,10 @@
 					<label for="rue"><h3>Rue<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÀ-ÿ\s.'-]{2,30}$" placeholder="Rue" aria-label="rue" name="rue" id="rue">
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("rue") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec une Rue valide</span>
+				        <% } } %>
 					</div>
 				</div>
 			
@@ -70,6 +90,10 @@
 					<label for="code_postal"><h3>Code Postal<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$" placeholder="Code postal" aria-label="code_postal" name="code_postal" id="code_postal">
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("code_postal") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec un Code Postal valide</span>
+				        <% } } %>
 					</div>
 				</div>
 			
@@ -77,6 +101,10 @@
 					<label for="ville"><h3>Ville<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" pattern="^[a-zA-ZÀ-ÿ]+(?:[\s-][a-zA-ZÀ-ÿ]+)*$" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("ville") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec une Ville valide</span>
+				        <% } } %>
 					</div>
 				</div>
 			
@@ -84,6 +112,10 @@
 					<label for="mot_de_passe"><h3>Mot de passe<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{12,}$" placeholder="Mot de passe" aria-label="mot_de_passe" name="mot_de_passe" id="mot_de_passe" required>
+						<% if(request.getParameter("nSubmit") != null) { 
+				            if(request.getParameter("mot_de_passe") == null || request.getParameter("identifiant").trim().isEmpty()) { %>
+				                <span style="color:red">Veuillez remplir ce champ avec un Mot de passe valide</span>
+				        <% } } %>
 					</div>
 				</div>
 			
@@ -96,7 +128,7 @@
 				<div><h6><span style="color: red;font-size:20px;position: relative;top: -12px;">*</span> Champs obligatoire</h6></div>
 			</div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-secondary" id="cr">Créer</button>
+					<input type="submit" id="nSubmit" name="nSubmit" class="btn btn-secondary" value="Créer">
                     <a href="${pageContext.request.contextPath}/servletAnnuler"><button type="submit" class="btn btn-secondary">Annuler</button></a>
 				</div>
 			</form>
