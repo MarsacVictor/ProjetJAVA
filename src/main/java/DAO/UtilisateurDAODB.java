@@ -1,5 +1,7 @@
 package DAO;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,7 +49,9 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 					pstmt.setString(6, utilisateur.getRue());
 					pstmt.setString(7, utilisateur.getCode_postal());
 					pstmt.setString(8, utilisateur.getVille());
-					pstmt.setString(9, utilisateur.getMot_de_passe());	
+					String Hachagemotdepasse = Hachagemotdepasse(utilisateur.getMot_de_passe());
+					pstmt.setString(9, (String)Hachagemotdepasse);	
+					
 					pstmt.setInt(10, 100);
 					if (utilisateur.getAdministrateur() == '0') {
 						pstmt.setBoolean(11, false);	
@@ -79,6 +83,18 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 		}
 		return notInsert;
 	}
+
+	private String Hachagemotdepasse(String mot_de_passe) throws NoSuchAlgorithmException {
+		    MessageDigest md = MessageDigest.getInstance("SHA-256");
+		    md.update(mot_de_passe.getBytes());
+		    byte[] bytes = md.digest();
+		    StringBuilder sb = new StringBuilder();
+		    for(int i=0; i< bytes.length ;i++)
+		    {
+		        sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+		    }
+		    return sb.toString();
+		}
 
 	@Override
 	public void deleteUtilisateur(int id) {
