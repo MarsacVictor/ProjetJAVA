@@ -58,7 +58,7 @@ pageEncoding="ISO-8859-1"%>
 </div>
 <div class="text-center">
 	<a href=""><button type="button" class="btn btn-secondary" style="margin-left:50px;">Mot de passe oublié</button></a>
-	<a href="${pageContext.request.contextPath}/servletInscription"><button type="button" class="btn btn-secondary">Créer compte</button></a>
+	<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 </div>
 </body>
 </html>

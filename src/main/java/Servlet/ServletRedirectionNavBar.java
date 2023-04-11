@@ -23,6 +23,7 @@ import Manager.UtilisateurManager;
 		urlPatterns= {
 						"/DirectionEncheres",
 						"/DirectionConnexion",
+						"/DirectionInscription",
 						"/DirectionVendreUnArticle",
 						"/DirectionMonProfil",
 						"/DirectionAccueil",
@@ -93,6 +94,10 @@ public class ServletRedirectionNavBar extends HttpServlet {
 	     }
 		 else if(request.getServletPath().equals("/DirectionProfilUtilisateur")){
 	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfilUtilisateur.jsp");
+			rd.forward(request, response); 
+	     }
+		 else if(request.getServletPath().equals("/DirectionInscription")){
+	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
 			rd.forward(request, response); 
 	     }
 		 else if(request.getServletPath().equals("/DirectionConnexion")){
