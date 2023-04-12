@@ -108,13 +108,13 @@
 		<div class="row">
 			
 			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 				<div class="card float-right">
 					<div class="row">
-						<div class="col-sm-5">
-				         	<img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
+						<div class="col-sm-6">
+				         	<img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt="">
 				        </div>
-				        <div class="col-sm-7">
+				        <div class="col-sm-6">
 				        	<h5 class="card-title">
 								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres" id="<%= article.getNoArticle()%>" class="<%= article.getNoArticle()%>"> <%}%>
 									<%= article.getNomArticle() %>
