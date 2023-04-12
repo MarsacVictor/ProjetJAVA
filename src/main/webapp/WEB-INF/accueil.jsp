@@ -115,7 +115,7 @@
 				        </div>
 				        <div class="col-sm-6">
 				        	<h5 class="card-title">
-								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres?<%= article.getNoArticle()%>>"><%}%>
+								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres?<%= article.getNoArticle()%>"><%}%>
 									<%= article.getNomArticle() %>
 								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
 							
