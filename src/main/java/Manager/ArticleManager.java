@@ -35,4 +35,14 @@ public class ArticleManager {
 		ArticleDAO = articleDAO;
 	}
 
+	public ArticleVendu selectArticleID(int id) {
+		// TODO Auto-generated method stub
+		return this.ArticleDAO.selectArticleId(id);
+	}
+
+	public Retrait selectRetraitID(int id) {
+		// TODO Auto-generated method stub
+		return this.ArticleDAO.selectRetraitId(id);
+	}
+
 }

@@ -19,9 +19,11 @@ public class ArticleDAODB implements ArticleDAO{
 	private static final String INSERT_RETRAIT = "insert into RETRAITS(no_article, rue, code_postal, ville) values(?, ?, ?, ?);";
 	private static final String SELECT_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
 	private static final String SELECT_BY_ID = "select * from UTILISATEURS where no_utilisateur = ?";
-	private static final String SELECT_BY_CATEGORIE = "select no_categorie FROM UTILISATEURS";
+	private static final String SELECT_BY_CATEGORIE = "select * FROM CATEGORIES WHERE no_categorie=?";
 	private static final String SELECT_UTILISATEUR_BY_ID = "SELECT no_utilisateur FROM UTILISATEURS WHERE pseudo= ? or email= ?";
 	private static final String SELECT_CATEGORIE_BY_ID = "SELECT no_categorie FROM CATEGORIES WHERE libelle= ?";
+	private static final String SELECT_ARTICLE_BY_ID = "SELECT * FROM ARTICLES_VENDUS WHERE no_article = ?";
+	private static final String SELECT_RETRAIT_BY_ID = "SELECT * FROM RETRAITS WHERE no_article=?";
 	
 	@Override
 	public void insertArticle(Retrait r) {
@@ -70,11 +72,7 @@ public class ArticleDAODB implements ArticleDAO{
 		}
 	}
 
-	@Override
-	public ArticleVendu selectArticle() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	public int selectIDUtilisateur(String pseudo) {
 		int u = 0;
 		try(Connection cnx = ConnectionProvider.getConnection())
@@ -183,7 +181,7 @@ public class ArticleDAODB implements ArticleDAO{
 	            {
 	            	u = this.selectById(rs.getInt("no_utilisateur"));
 	            	ca = this.selectByCat(rs.getInt("no_categorie"));
-	                articles.add(new ArticleVendu(rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"),u,ca));
+	                articles.add(new ArticleVendu(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"),u,ca));
 	            }
 	        }
 	        catch(Exception e)
@@ -209,7 +207,7 @@ public class ArticleDAODB implements ArticleDAO{
 				cnx.setAutoCommit(false);
 				PreparedStatement pstmt;
 				ResultSet rs;
-				pstmt = cnx.prepareStatement(SELECT_BY_ID);
+				pstmt = cnx.prepareStatement(SELECT_BY_CATEGORIE);
 				pstmt.setInt(1, identifiant);
 				rs = pstmt.executeQuery();
 				while(rs.next())
@@ -262,6 +260,76 @@ public class ArticleDAODB implements ArticleDAO{
 			e.printStackTrace();			
 		}
 		return u;
+	}
+
+	@Override
+	public ArticleVendu selectArticleId(int id) {
+		ArticleVendu av = null;
+		Utilisateur u;
+		Categorie ca;
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_ARTICLE_BY_ID);
+				pstmt.setInt(1, id);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					u = this.selectById(rs.getInt("no_utilisateur"));
+	            	ca = this.selectByCat(rs.getInt("no_categorie"));
+					av = new ArticleVendu(rs.getInt("no_article"),rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"), u, ca);
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return av;
+	}
+
+
+	@Override
+	public Retrait selectRetraitId(int id) {
+		Retrait r = null;
+		ArticleVendu av = this.selectArticleId(id);
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_RETRAIT_BY_ID);
+				pstmt.setInt(1, id);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{				
+					r = new Retrait(rs.getString("rue"), rs.getString("code_postal"), rs.getString("ville"), av);
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return r;
 	}
 	
 }

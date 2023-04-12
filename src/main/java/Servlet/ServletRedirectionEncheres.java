@@ -1,11 +1,14 @@
 package Servlet;
-
+import Manager.*;
+import Class.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 /**
@@ -32,9 +35,14 @@ public class ServletRedirectionEncheres extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 if(request.getServletPath().equals("/DirectionDetailEncheres")) {
-			 	System.out.println(request.getLocalName());
 			 	
-			 	System.err.println(request.getRequestURL());
+			 	ArticleManager articleManager = new ArticleManager();
+			 	ArticleVendu av = articleManager.selectArticleID(Integer.parseInt(request.getQueryString()));
+			 	Retrait r = articleManager.selectRetraitID(Integer.parseInt(request.getQueryString()));
+			 	HttpSession session = request.getSession();
+			 	session.setAttribute("articleEnchere", av);	
+			 	session.setAttribute("retraitEnchere", r);
+			 	
 	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/detailVenteEncheres.jsp");
 				rd.forward(request, response);
 	     }
