@@ -33,8 +33,6 @@ public class ArticleDAODB implements ArticleDAO{
 		{
 			try {
 				noCategorie = this.selectIDCategorie(r.getArticle().getCategorie().getLibelle());
-				System.out.println(r.getArticle().getCategorie().getLibelle());
-				System.out.println(noCategorie);
 				noUtilisateur = this.selectIDUtilisateur(r.getArticle().getUtilisateur().getPseudo());
 				cnx.setAutoCommit(false);
 				PreparedStatement pstmt;

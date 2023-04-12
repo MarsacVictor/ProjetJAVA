@@ -62,14 +62,6 @@ public class ServletNouvelleArticle extends HttpServlet {
 		String categorie = request.getParameter("categorie");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-		System.out.println(request.getParameter("dateStart"));
-		System.out.println(request.getParameter("dateEnd"));
-		try {
-			System.out.println(dateFormat.parse(request.getParameter("dateStart")));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		String rue = request.getParameter("rue");
 		String code_postal = request.getParameter("code_postal");
