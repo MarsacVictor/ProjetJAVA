@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +16,7 @@
 			<div class="col-lg-4"><h3>Nom: </h3></div>
 			<div class="col-lg-8"><%= request.getAttribute("nom")%></div>
 			
-			<div class="col-lg-4"><h3>Prénom: </h3></div>
+			<div class="col-lg-4"><h3>PrÃ©nom: </h3></div>
 			<div class="col-lg-8"><%= request.getAttribute("prenom")%></div>
 			
 			<div class="col-lg-4"><h3 style=" width: 160px;">Code postal: </h3></div>

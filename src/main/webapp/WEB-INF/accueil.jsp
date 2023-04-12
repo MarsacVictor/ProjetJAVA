@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%if (session.getAttribute("identifiant") != null) {%> 
     	<%@ include file="navbar_connecte.jsp" %>
     <%} else {%>
@@ -18,7 +17,7 @@
     <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #FFF">
-	<div class="text-center" style="color: #FFF"><h1>Liste des enchères</h1></div>
+	<div class="text-center" style="color: #FFF"><h1>Liste des enchÃ¨res</h1></div>
 	
 	<br>
 	<div class="container">
@@ -40,7 +39,7 @@
 	<div class="container">
 		<div class="row">
 			<div>
-				<h3 style="color: #F2913D">Catégorie : </h3>
+				<h3 style="color: #F2913D">CatÃ©gorie : </h3>
 			</div>		
 			<form style="margin-left: 50px;">
 				<div class="form-row">
@@ -68,15 +67,15 @@
 					<!-- Si actif afficher les radio -->
 					<div class="form-check">
 					  <input class="form-check-input" type="radio" name="exampleRadios" id="EnchereOuverteCheck" value="option1" checked>
-					  <label class="form-check-label" for="EnchereOuverteCheck">enchères ouvertes</label>
+					  <label class="form-check-label" for="EnchereOuverteCheck">enchÃ¨res ouvertes</label>
 					</div>
 					<div class="form-check">
 					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesEncheresCheck" value="option1" checked>
-					  <label class="form-check-label" for="MesEncheresCheck">mes enchères en cours</label>
+					  <label class="form-check-label" for="MesEncheresCheck">mes enchÃ¨res en cours</label>
 					</div>
 					<div class="form-check">
 					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesEncheresRemporteCheck" value="option1" checked>
-					  <label class="form-check-label" for="MesEncheresRemporteCheck">mes enchères remportées</label>
+					  <label class="form-check-label" for="MesEncheresRemporteCheck">mes enchÃ¨res remportÃ©es</label>
 					</div>
 			</div>
 			<div class="col-3">
@@ -91,11 +90,11 @@
 					</div>
 					<div class="form-check">
 					  <input class="form-check-input" type="radio" name="exampleRadios" id="MesVentesNonDebuteCheck" value="option1" checked>
-					  <label class="form-check-label" for="MesVentesNonDebuteCheck">ventes non débutées</label>
+					  <label class="form-check-label" for="MesVentesNonDebuteCheck">ventes non dÃ©butÃ©es</label>
 					</div>
 					<div class="form-check">
 					  <input class="form-check-input" type="radio" name="exampleRadios" id="VentesTermineCheck" value="option1" checked>
-					  <label class="form-check-label" for="VentesTermineCheck">ventes terminées</label>
+					  <label class="form-check-label" for="VentesTermineCheck">ventes terminÃ©es</label>
 					</div>
 			</div>
 	 	</div>
@@ -122,7 +121,7 @@
 							
 							</h5>
 				        	<p>Prix: <%= article.getPrixVente() %></p>
-				        	<p>Fin de l'enchère: <%= article.getDateFinEncheres() %></p>
+				        	<p>Fin de l'enchÃ¨re: <%= article.getDateFinEncheres() %></p>
 				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
 											X
 										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>

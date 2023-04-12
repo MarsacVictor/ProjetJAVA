@@ -53,10 +53,7 @@ public class ServletNouvelleArticle extends HttpServlet {
 		
 		CategorieManager CategorieManager = new CategorieManager();			
 		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
-		ArticleManager ArticleManager = new ArticleManager();	
-	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
-	    
-	    request.setAttribute("articles", articles);	
+		
 		request.setAttribute("listCategorie", listC);
 				
 		
@@ -87,6 +84,12 @@ public class ServletNouvelleArticle extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
+	    
 		rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 		rd.forward(request, response);
 		}

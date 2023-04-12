@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +12,13 @@
   <div class="container-fluid">
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<a class="navbar-brand mt-2 mt-lg-0" href="${pageContext.request.contextPath}/DirectionAccueil">
-			<img src="Image/logoENIEncheres.png" height="60" alt="Logo ENI-Enchères"/>
+			<img src="Image/logoENIEncheres.png" height="60" alt="Logo ENI-EnchÃ¨res"/>
 			</a>
 	    </div>
 	
 	    <div class="d-flex align-items-center">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionEncheres">Mes enchères</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionEncheres">Mes enchÃ¨res</a></li>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionVendreUnArticle">Vendre un article</a></li>
@@ -28,7 +27,7 @@
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionMonProfil">Mon profil</a></li>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionDeconnexion">Déconnexion</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionDeconnexion">DÃ©connexion</a></li>
 			</ul>
 		</div>
 	</div>

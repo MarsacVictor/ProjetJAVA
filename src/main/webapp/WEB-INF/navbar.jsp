@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,7 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<a class="navbar-brand mt-2 mt-lg-0" href="${pageContext.request.contextPath}/DirectionAccueil">
-			<img src="Image/logoENIEncheres.png" height="60" alt="Logo ENI-Enchères"/>
+			<img src="Image/logoENIEncheres.png" height="60" alt="Logo ENI-EnchÃ¨res"/>
 		</a>
     </div>
 

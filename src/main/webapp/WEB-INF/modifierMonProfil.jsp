@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ include file="navbar_connecte.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -49,7 +48,7 @@
 				<div class="form-group col-md-6">
 					<label for="Rue"><h3>Rue:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÀ-ÿ\s.'-]{2,30}$" class="form-control" value="<%= request.getAttribute("rue")%>" aria-label="Rue" id="rue" name="rue">
+						<input type="text" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÃ€-Ã¿\s.'-]{2,30}$" class="form-control" value="<%= request.getAttribute("rue")%>" aria-label="Rue" id="rue" name="rue">
 					</div>
 				</div>
 			
@@ -63,12 +62,12 @@
 				<div class="form-group col-md-6">
 					<label for="Ville"><h3>Ville:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" pattern="^[a-zA-ZÀ-ÿ]+(?:[\s-][a-zA-ZÀ-ÿ]+)*$" class="form-control" value="<%= request.getAttribute("ville")%>" aria-label="Ville" id="ville" name="ville">
+						<input type="text" pattern="^[a-zA-ZÃ€-Ã¿]+(?:[\s-][a-zA-ZÃ€-Ã¿]+)*$" class="form-control" value="<%= request.getAttribute("ville")%>" aria-label="Ville" id="ville" name="ville">
 					</div>
 				</div>
 
 					<div class="form-group col-md-6">
-						<label for="Confirmation"><h3>Crédit:</h3></label>
+						<label for="Confirmation"><h3>CrÃ©dit:</h3></label>
 						<div class="col-sm-10">
 							<input type="text" readonly class="form-control-plaintext"
 								placeholder="<%=request.getAttribute("credit")%>">

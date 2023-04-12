@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
         <%if (session.getAttribute("identifiant") != null) {%> 
     	<%@ include file="navbar_connecte.jsp" %>
     <%} else {%>
@@ -9,11 +8,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Encheres remporté</title>
+<title>Encheres remportÃ©</title>
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<div class="text-center"><h1>Vous avez remporté la vente</h1></div>
+	<div class="text-center"><h1>Vous avez remportÃ© la vente</h1></div>
 	<br>
 	<div class="container">
 		<div class="row">
@@ -27,7 +26,7 @@
 				<div><h3>Titre</h3></div>
 				<div><h3>Description: </h3></div>
 				<div><h3>Meilleure offre: </h3></div>
-				<div><h3>Mise à prix: </h3></div>
+				<div><h3>Mise Ã  prix: </h3></div>
 				<div><h3>Retrait: </h3></div>
 				<div><h3>Vendeur: </h3></div>
 				<div><h3>Tel: </h3></div>

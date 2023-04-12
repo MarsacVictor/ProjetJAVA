@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +56,7 @@ pageEncoding="ISO-8859-1"%>
 	</div>
 </div>
 <div class="text-center">
-	<a href=""><button type="button" class="btn btn-secondary" style="margin-left:50px;">Mot de passe oublié</button></a>
+	<a href=""><button type="button" class="btn btn-secondary" style="margin-left:50px;">Mot de passe oubliÃ©</button></a>
 	<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 </div>
 </body>

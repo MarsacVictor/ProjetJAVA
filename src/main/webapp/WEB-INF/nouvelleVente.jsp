@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Class.Categorie" %>
 <!DOCTYPE html>
@@ -37,10 +36,10 @@
 
 			<div class="form-group col-md-4"></div>
 			<div class="form-group col-md-6">
-				<label for="categorie"><h3>Catégorie:</h3></label>
+				<label for="categorie"><h3>CatÃ©gorie:</h3></label>
 				<div class="col-sm-10">
 					  <select class="custom-select my-1 mr-sm-2" id="categorie" name="categorie" required>
-					    <option selected>Catégorie</option>
+					    <option selected>CatÃ©gorie</option>
 					        <%for(Categorie c : (List<Categorie>)request.getAttribute("listCategorie")) {%>
 					        	<option value=<%= c.getLibelle() %>><%= c.getLibelle() %></option>
 					        <%} %>
@@ -60,7 +59,7 @@
 			
 			<div class="form-group col-md-4"></div>
 			<div class="form-group col-md-6">
-				<label for="MiseaPrix"><h3>Mise à prix:</h3></label>
+				<label for="MiseaPrix"><h3>Mise Ã  prix:</h3></label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" placeholder="Prix"
 						aria-label="MiseaPrix" name="prix" id ="prix" required>
@@ -70,7 +69,7 @@
 			
 			<div class="form-group col-md-4"></div>
 			<div class="form-group col-md-6">
-				<label for="MiseaPrix"><h3>Début de l'enchère:</h3></label>
+				<label for="MiseaPrix"><h3>DÃ©but de l'enchÃ¨re:</h3></label>
 				<div class="col-sm-10">
 					<input type="date" id="dateStart" name="dateStart" value="2023-01-01" min="2023-01-01" max="2025-12-31">
 				</div>
@@ -79,7 +78,7 @@
 			
 			<div class="form-group col-md-4"></div>
 			<div class="form-group col-md-6">
-				<label for="MiseaPrix"><h3>Fin de l'enchère:</h3></label>
+				<label for="MiseaPrix"><h3>Fin de l'enchÃ¨re:</h3></label>
 				<div class="col-sm-10">
 					<input type="date" id="dateEnd" name="dateEnd" value="2023-01-01" min="2023-01-01" max="2025-12-31">
 				</div>

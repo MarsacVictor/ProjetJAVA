@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     
      <%if (session.getAttribute("identifiant") != null) {%> 
     	<%@ include file="navbar_connecte.jsp" %>
@@ -62,7 +61,7 @@
 				<div class="form-group col-md-6">
 					<label for="rue"><h3>Rue<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÀ-ÿ\s.'-]{2,30}$" placeholder="Rue" aria-label="rue" name="rue" id="rue">
+						<input type="text" class="form-control" pattern="^[1-9][0-9]{0,2}(bis|ter)? [a-zA-ZÃ€-Ã¿\s.'-]{2,30}$" placeholder="Rue" aria-label="rue" name="rue" id="rue">
 					</div>
 				</div>
 			
@@ -76,7 +75,7 @@
 				<div class="form-group col-md-6">
 					<label for="ville"><h3>Ville<span style="color: red;font-size:20px;position: relative;top: -12px;">*</span>:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" pattern="^[a-zA-ZÀ-ÿ]+(?:[\s-][a-zA-ZÀ-ÿ]+)*$" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
+						<input type="text" class="form-control" pattern="^[a-zA-ZÃ€-Ã¿]+(?:[\s-][a-zA-ZÃ€-Ã¿]+)*$" placeholder="Ville" aria-label="ville" name="ville" id="ville" required>
 					</div>
 				</div>
 			
@@ -96,8 +95,8 @@
 				<div><h6><span style="color: red;font-size:20px;position: relative;top: -12px;">*</span> Champs obligatoire</h6></div>
 			</div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-secondary" id="cr">Créer</button>
-                    <a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
+					<button type="submit" class="btn btn-secondary" id="cr">CrÃ©er</button>
+ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  <a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 				</div>
 			</form>
 			<% if (request.getAttribute("error") != null) {%> 
