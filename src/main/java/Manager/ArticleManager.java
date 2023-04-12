@@ -45,4 +45,9 @@ public class ArticleManager {
 		return this.ArticleDAO.selectRetraitId(id);
 	}
 
+	public void updateCreditArticle(int noArticle, int credit) {
+		// TODO Auto-generated method stub
+		this.ArticleDAO.updateCreditArticle(noArticle, credit);
+	}
+
 }

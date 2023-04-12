@@ -39,4 +39,9 @@ public class UtilisateurManager {
 		// TODO Auto-generated method stub
 		return this.UtilisateurDAO.selectUtilisateurByID(ID);
 	}
+
+	public void updateCredit(String pseudo, int i) {
+		// TODO Auto-generated method stub
+		this.UtilisateurDAO.updateCreditUtilisateur(pseudo, i);
+	}
 }

@@ -11,4 +11,5 @@ public interface ArticleDAO {
 	Utilisateur selectById(int identifiant);
 	public ArticleVendu selectArticleId(int id);
 	public Retrait selectRetraitId(int id);
+	public void updateCreditArticle(int noArticle, int credit);
 }

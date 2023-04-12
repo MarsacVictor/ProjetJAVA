@@ -21,6 +21,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	private static final String UPDATE_UTILISATEUR = "UPDATE UTILISATEURS SET pseudo = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ?  WHERE pseudo = ? and email = ?";
 	private static final String DELETE_UTILISATEUR_BY_ID = "DELETE FROM UTILISATEURS WHERE pseudo = ? ";
 	private static final String SELECT_DETAIL_ENCHERES = "select * from UTILISATEURS WHERE no_utilisateur = ?";
+	private static final String UPDATE_CREDIT_UTILISATEUR = "UPDATE UTILISATEURS SET credit=? WHERE pseudo=?";
 
 	
 	@Override
@@ -265,6 +266,21 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 			e.printStackTrace();			
 		}
 		return u;
+	}
+
+	@Override
+	public void updateCreditUtilisateur(String pseudo, int i) {
+		// TODO Auto-generated method stub
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(UPDATE_CREDIT_UTILISATEUR);
+			pstmt.setInt(1, i);
+			pstmt.setString(2, pseudo);		
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
 

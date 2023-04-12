@@ -4,5 +4,5 @@ import Class.*;
 
 public interface EnchereDAO {
 	public ArticleVendu selectArticle();
-	public void insertEnchere(int id, Utilisateur u );
+	public void insertEnchere(ArticleVendu id, Utilisateur u, int credit );
 }

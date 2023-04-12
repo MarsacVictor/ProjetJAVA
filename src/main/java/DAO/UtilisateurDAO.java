@@ -13,4 +13,5 @@ public interface UtilisateurDAO {
 	public boolean connexion(String identifiant, String mdp);
 	public void supprimerUtilisateur(String pseudo);
 	public Utilisateur selectUtilisateurByID(int iD);
+	public void updateCreditUtilisateur(String pseudo, int i);
 }

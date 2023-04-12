@@ -38,8 +38,8 @@ if (session.getAttribute("identifiant") != null) {
 				<div><h3>Retrait</h3></div><%= ((Retrait)session.getAttribute("retraitEnchere")).getRue() %> <%= ((Retrait)session.getAttribute("retraitEnchere")).getVille() %><br>
 				<div><h3>Vendeur</h3></div><%= ((ArticleVendu)session.getAttribute("articleEnchere")).getUtilisateur().getPseudo() %><br>
 				
-				<form method="post" class="" action="">
-					<div><h3>Ma proposition</h3><input type="number" class="form-control" id="identifiant" name="identifiant" value="<%= ((ArticleVendu)session.getAttribute("articleEnchere")).getPrixVente() + 1 %>"></div><br>
+				<form method="post" class="" action="${pageContext.request.contextPath}/servletEncherir">
+					<div><h3>Ma proposition</h3><input type="number" class="form-control" id="credit" name="credit" value="<%= ((ArticleVendu)session.getAttribute("articleEnchere")).getPrixVente() + 1 %>"></div><br>
 					<div style="display:flex; margin: 0 auto;justify-content: center;"><button type="submit" class="btn btn-secondary" style="margin-right:20px;">Enchérir</button>
 						<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 					</div>
