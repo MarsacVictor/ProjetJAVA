@@ -108,7 +108,7 @@
 		<div class="row">
 			
 			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>
-			<div class="col-lg-6">
+			<div class="col-lg-6" style="margin-bottom:20px;">
 				<div class="card float-right">
 					<div class="row">
 						<div class="col-sm-6">
