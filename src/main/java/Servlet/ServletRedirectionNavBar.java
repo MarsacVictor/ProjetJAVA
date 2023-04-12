@@ -98,10 +98,23 @@ public class ServletRedirectionNavBar extends HttpServlet {
 	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response); 
 	     }
+		
 		 else if(request.getServletPath().equals("/DirectionProfilUtilisateur")){
-	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfilUtilisateur.jsp");
+			 UtilisateurManager utilisateurManager = new UtilisateurManager();
+			 Utilisateur u = utilisateurManager.selectUtilisateurByID(Integer.parseInt(request.getQueryString()));
+	    	 
+			request.setAttribute("pseudo", u.getPseudo());;
+			request.setAttribute("prenom", u.getPrenom());
+			request.setAttribute("nom", u.getNom());
+			request.setAttribute("code_postal", u.getCode_postal());
+			request.setAttribute("ville", u.getVille());
+			 
+			 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherProfilUtilisateur.jsp");
 			rd.forward(request, response); 
 	     }
+		 
+		 
+		 
 		 else if(request.getServletPath().equals("/DirectionInscription")){
 	    	 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
 			rd.forward(request, response); 

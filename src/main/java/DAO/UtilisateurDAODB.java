@@ -7,6 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+
+import Class.ArticleVendu;
+import Class.Retrait;
 import Class.Utilisateur;
 
 public class UtilisateurDAODB implements UtilisateurDAO {
@@ -17,6 +20,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	private static final String SELECT_BY_ID = "select * from UTILISATEURS where pseudo = ? or email = ?";
 	private static final String UPDATE_UTILISATEUR = "UPDATE UTILISATEURS SET pseudo = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ?  WHERE pseudo = ? and email = ?";
 	private static final String DELETE_UTILISATEUR_BY_ID = "DELETE FROM UTILISATEURS WHERE pseudo = ? ";
+	private static final String SELECT_DETAIL_ENCHERES = "select * from UTILISATEURS WHERE no_utilisateur = ?";
 
 	
 	@Override
@@ -229,6 +233,38 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 			e.printStackTrace();			
 		}
 		return trouve;
+	}
+	
+	@Override
+	public Utilisateur selectUtilisateurByID(int iD) {
+		Utilisateur u = null;
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_DETAIL_ENCHERES);
+				pstmt.setInt(1, iD);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{				
+					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');;
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return u;
 	}
 }
 

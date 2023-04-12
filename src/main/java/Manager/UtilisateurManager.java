@@ -34,4 +34,9 @@ public class UtilisateurManager {
 			this.UtilisateurDAO.updateUtilisateur(pseudo, email, pseudo2, prenom, email2, telephone,rue,code_postal,ville,newMdp);
 		
 	}
+
+	public Utilisateur selectUtilisateurByID(int ID) {
+		// TODO Auto-generated method stub
+		return this.UtilisateurDAO.selectUtilisateurByID(ID);
+	}
 }

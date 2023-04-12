@@ -180,6 +180,7 @@ public class ArticleDAODB implements ArticleDAO{
 	            while(rs.next())
 	            {
 	            	u = this.selectById(rs.getInt("no_utilisateur"));
+	            	u.setNo_utilisateur(rs.getInt("no_utilisateur"));
 	            	ca = this.selectByCat(rs.getInt("no_categorie"));
 	                articles.add(new ArticleVendu(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"),u,ca));
 	            }
