@@ -115,7 +115,7 @@
 				        </div>
 				        <div class="col-sm-6">
 				        	<h5 class="card-title">
-								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres" id="<%= article.getNoArticle()%>" class="<%= article.getNoArticle()%>"> <%}%>
+								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres?<%= article.getNoArticle()%>>"><%}%>
 									<%= article.getNomArticle() %>
 								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
 							
@@ -123,7 +123,7 @@
 				        	<p>Prix: <%= article.getPrixVente() %></p>
 				        	<p>Fin de l'enchère: <%= article.getDateFinEncheres() %></p>
 				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
-											X
+											<%= article.getUtilisateur().getPseudo() %>
 										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
 							</p>
 						</div>
