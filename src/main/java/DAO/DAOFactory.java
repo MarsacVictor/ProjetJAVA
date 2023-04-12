@@ -15,5 +15,9 @@ public abstract class DAOFactory {
 	{
 		return new ArticleDAODB();
 	}
+	public static EnchereDAO getEnchereDAO()
+	{
+		return new EnchereDAODB();
+	}
 }
 	
