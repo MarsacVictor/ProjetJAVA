@@ -107,10 +107,10 @@
 		<div class="row">
 			
 			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>
-			<div class="col-lg-6" style="margin-bottom:20px;">
+			<div class="col-lg-4" style="margin-bottom:20px;">
 				<div class="card float-right">
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-6">
 				         	<img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt="">
 				        </div>
 				        <div class="col-sm-6">
