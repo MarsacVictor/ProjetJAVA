@@ -20,7 +20,7 @@
 				<div class="form-group col-md-6">
 					<label for="Pseudo"><h3>Pseudo:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" class="form-control" aria-label="Pseudo" id="pseudo" name="pseudo" value=<%= request.getAttribute("pseudo")%>>
+						<input type="text" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" class="form-control" aria-label="Pseudo" id="pseudo" name="pseudo" value=<%= request.getAttribute("pseudo")%> readonly>
 					</div>
 				</div>
 				
@@ -34,7 +34,7 @@
 				<div class="form-group col-md-6">
 					<label for="Email"><h3>Email:</h3></label>
 					<div class="col-sm-10">
-						<input type="text" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="form-control" value="<%= request.getAttribute("email")%>" aria-label="Email" id="email" name="email">
+						<input type="text" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="form-control" value="<%= request.getAttribute("email")%>" aria-label="Email" id="email" name="email" readonly>
 					</div>
 				</div>
 			
