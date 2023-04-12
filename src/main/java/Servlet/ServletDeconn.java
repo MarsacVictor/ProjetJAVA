@@ -11,7 +11,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
+import Manager.ArticleManager;
 import Manager.CategorieManager;
 
 /**
@@ -39,6 +41,10 @@ public class ServletDeconn extends HttpServlet {
 		// TODO Auto-generated method stub
 		CategorieManager CategorieManager = new CategorieManager();			
 		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+		ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
 		request.setAttribute("listCategorie", listC);
 		HttpSession session = request.getSession();
 		session.invalidate();

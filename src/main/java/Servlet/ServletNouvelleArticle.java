@@ -14,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
 import Class.Utilisateur;
 import Manager.*;
@@ -52,6 +53,10 @@ public class ServletNouvelleArticle extends HttpServlet {
 		
 		CategorieManager CategorieManager = new CategorieManager();			
 		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+		ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
 		request.setAttribute("listCategorie", listC);
 				
 		

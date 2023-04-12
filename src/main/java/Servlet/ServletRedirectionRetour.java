@@ -9,7 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
+import Manager.ArticleManager;
 import Manager.CategorieManager;
 
 /**
@@ -38,6 +40,10 @@ public class ServletRedirectionRetour extends HttpServlet {
 		 if(request.getServletPath().equals("/retourAccueil")) {
 			 	CategorieManager CategorieManager = new CategorieManager();			
 				List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+				ArticleManager ArticleManager = new ArticleManager();	
+			    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+			    
+			    request.setAttribute("articles", articles);	
 				request.setAttribute("listCategorie", listC);
 	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);

@@ -9,13 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import Class.ArticleVendu;
+import Class.Categorie;
 import Class.Retrait;
+import Class.Utilisateur;
 
 public class ArticleDAODB implements ArticleDAO{
 	
 	private static final String INSERT_ARTICLE = "insert into ARTICLES_VENDUS(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie) values(?, ?, ?, ?, ?, ?, ?, ?);";
 	private static final String INSERT_RETRAIT = "insert into RETRAITS(no_article, rue, code_postal, ville) values(?, ?, ?, ?);";
-	private static final String SELECT_LAST_ROW = "SELECT MAX(no_article) FROM ARTICLES_VENDUS";
+	private static final String SELECT_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
+	private static final String SELECT_BY_ID = "select * from UTILISATEURS where no_utilisateur = ?";
+	private static final String SELECT_BY_CATEGORIE = "select no_categorie FROM UTILISATEURS";
 	private static final String SELECT_UTILISATEUR_BY_ID = "SELECT no_utilisateur FROM UTILISATEURS WHERE pseudo= ? or email= ?";
 	private static final String SELECT_CATEGORIE_BY_ID = "SELECT no_categorie FROM CATEGORIES WHERE libelle= ?";
 	
@@ -161,4 +165,103 @@ public class ArticleDAODB implements ArticleDAO{
 		}
 	}
 
+	@Override
+	public List<ArticleVendu> selectAllArticle() {
+		Utilisateur u;
+		Categorie ca;
+		List<ArticleVendu> articles = new ArrayList<>();
+	    try(Connection cnx = ConnectionProvider.getConnection())
+	    {
+	        try
+	        {
+	            cnx.setAutoCommit(false);
+	            PreparedStatement pstmt;
+	            ResultSet rs;
+	            pstmt = cnx.prepareStatement(SELECT_ARTICLE);
+	            rs = pstmt.executeQuery();
+	            while(rs.next())
+	            {
+	            	u = this.selectById(rs.getInt("no_utilisateur"));
+	            	ca = this.selectByCat(rs.getInt("no_categorie"));
+	                articles.add(new ArticleVendu(rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"),u,ca));
+	            }
+	        }
+	        catch(Exception e)
+	        {
+	            e.printStackTrace();
+	            cnx.rollback();
+	            throw e;
+	        }
+	    }
+	    catch(Exception e)
+	    {
+	        e.printStackTrace();
+	    }
+	    return articles;
+	}
+	
+	private Categorie selectByCat(int identifiant) {
+		Categorie ca = null;
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_BY_ID);
+				pstmt.setInt(1, identifiant);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					ca = new Categorie(rs.getString("libelle"));
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return ca;
+	}
+
+	@Override
+	public Utilisateur selectById(int identifiant) {
+		// TODO Auto-generated method stub
+		Utilisateur u = null;
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_BY_ID);
+				pstmt.setInt(1, identifiant);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return u;
+	}
+	
 }

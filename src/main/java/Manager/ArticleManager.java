@@ -1,6 +1,8 @@
 package Manager;
 
 import java.util.Date;
+import java.util.List;
+
 import Class.ArticleVendu;
 import Class.Categorie;
 import Class.Utilisateur;
@@ -22,4 +24,15 @@ public class ArticleManager {
 		Retrait r = new Retrait(rue, code_postal, ville, a);
 		this.ArticleDAO.insertArticle(r);
 	}
+	
+	public List<ArticleVendu> getArticleDAO() {
+		return this.ArticleDAO.selectAllArticle();
+	}
+
+	
+	
+	public void setArticleDAO(ArticleDAO articleDAO) {
+		ArticleDAO = articleDAO;
+	}
+
 }

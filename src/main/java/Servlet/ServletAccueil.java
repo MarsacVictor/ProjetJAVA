@@ -10,7 +10,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
+import Manager.ArticleManager;
 import Manager.CategorieManager;
 /**
  * Servlet implementation class servletAccueil
@@ -34,6 +36,11 @@ public class ServletAccueil extends HttpServlet {
 		// TODO Auto-generated method stub
 		CategorieManager CategorieManager = new CategorieManager();			
 		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+	
+		ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
 		request.setAttribute("listCategorie", listC);
 		request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 	}

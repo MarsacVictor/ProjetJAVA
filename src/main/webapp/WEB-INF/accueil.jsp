@@ -7,6 +7,7 @@
     	<%} %>
 <%@ page import="java.util.List" %>
 <%@ page import="Class.Categorie" %>
+<%@ page import="Class.ArticleVendu" %>
 
 <!DOCTYPE html>
 <html>
@@ -105,6 +106,8 @@
 	<!-- Carte -->
 	<div class="container">
 		<div class="row">
+			
+			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>
 			<div class="col-lg-4">
 				<div class="card float-right">
 					<div class="row">
@@ -114,11 +117,12 @@
 				        <div class="col-sm-7">
 				        	<h5 class="card-title">
 								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres"> <%}%>
-									Titre carte
+									<%= article.getNomArticle() %>
 								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							
 							</h5>
-				        	<p>Prix: X</p>
-				        	<p>Fin de l'enchère: X</p>
+				        	<p>Prix: <%= article.getPrixVente() %></p>
+				        	<p>Fin de l'enchère: <%= article.getDateFinEncheres() %></p>
 				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
 											X
 										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
@@ -127,54 +131,8 @@
 					</div>
 				</div>	
 			</div>
-			<div class="col-lg-4">
-				<div class="card float-right">
-					<div class="row">
-						<div class="col-sm-5">
-				         	<img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
-				        </div>
-				        <div class="col-sm-7">
-				        	<h5 class="card-title">
-								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres"> <%}%>
-									Titre carte
-								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
-							</h5>
-				        	<p>Prix: X</p>
-				        	<p>Fin de l'enchère: X</p>
-			        	 	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
-										X
-									<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
-							</p>
-				        </div>
-					</div>
-				</div>	
-			</div>
-			<div class="col-lg-4">
-				<div class="card float-right">
-					<div class="row">
-						<div class="col-sm-5">
-				         	<img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
-				        </div>
-				        <div class="col-sm-7">
-				        	<h5 class="card-title">
-								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres"> <%}%>
-									Titre carte
-								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
-							</h5>
+			<%} %>
 
-				        	
-				        	
-				        	
-				        	<p>Prix: X</p>
-				        	<p>Fin de l'enchère: X</p>
-			        	 	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"> <%}%>
-										X
-									<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
-							</p>
-				        </div>
-					</div>
-				</div>	
-			</div>
 		</div>
 	</div>
 	

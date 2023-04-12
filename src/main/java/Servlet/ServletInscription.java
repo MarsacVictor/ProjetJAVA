@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
 import Class.Utilisateur;
 
@@ -53,6 +54,10 @@ public class ServletInscription extends HttpServlet {
 		// TODO Auto-generated method stub
 		CategorieManager CategorieManager = new CategorieManager();			
 		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+		ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
 		request.setAttribute("listCategorie", listC);
 		if(request.getServletPath().equals("/servletCreer")) {
 			if(request.getParameter("mot_de_passe").equals(request.getParameter("confirmation"))) {

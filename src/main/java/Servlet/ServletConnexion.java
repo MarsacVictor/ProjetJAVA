@@ -13,7 +13,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
+import Manager.ArticleManager;
 import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
@@ -54,6 +56,10 @@ public class ServletConnexion extends HttpServlet {
 	    // TODO Auto-generated method stub
 	    CategorieManager CategorieManager = new CategorieManager();            
 	    List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+	    ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
 	    request.setAttribute("listCategorie", listC);
 	    
 	    if(request.getServletPath().equals("/servletConn")) {

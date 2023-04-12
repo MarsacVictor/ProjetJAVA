@@ -11,7 +11,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
+import Manager.ArticleManager;
 import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
@@ -46,6 +48,10 @@ public class ServletSuppressionCompte extends HttpServlet {
 		else if(request.getServletPath().equals("/suppression")){
 			CategorieManager CategorieManager = new CategorieManager();			
 			List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+			ArticleManager ArticleManager = new ArticleManager();	
+		    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+		    
+		    request.setAttribute("articles", articles);	
 			request.setAttribute("listCategorie", listC);
 			HttpSession session = request.getSession();
 			UtilisateurManager utilisateurManager = new UtilisateurManager();	

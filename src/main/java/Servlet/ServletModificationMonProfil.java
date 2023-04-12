@@ -13,8 +13,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import Class.ArticleVendu;
 import Class.Categorie;
 import Class.Utilisateur;
+import Manager.ArticleManager;
 import Manager.CategorieManager;
 import Manager.UtilisateurManager;
 
@@ -50,6 +52,10 @@ public class ServletModificationMonProfil extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    CategorieManager CategorieManager = new CategorieManager();          
 	    List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+	    ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
 	    request.setAttribute("listCategorie", listC);
 
 	    RequestDispatcher rd = null;
