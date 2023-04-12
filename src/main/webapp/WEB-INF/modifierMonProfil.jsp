@@ -70,7 +70,7 @@
 						<label for="Confirmation"><h3>Crédit:</h3></label>
 						<div class="col-sm-10">
 							<input type="text" readonly class="form-control-plaintext"
-								placeholder="<%=request.getAttribute("credit")%>">
+								placeholder="<%=request.getAttribute("credit")%>" name="credit" id="credit">
 						</div>
 					</div>
 
@@ -103,6 +103,10 @@
 					<a href="${pageContext.request.contextPath}/RedirectionSuppression"><button type="button" class="btn btn-secondary">Supprimer mon compte</button></a>
 				</div>
 			</form>
+			<% if(request.getParameter("ConnexionSubmit") != null) { 
+				if (request.getAttribute("error2") != null) {%> 
+				<%= request.getAttribute("error2")  %>
+			<%} }%>
 		</div>
 	</div>
 </body>

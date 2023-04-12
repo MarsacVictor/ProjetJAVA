@@ -91,13 +91,29 @@ public class ServletModificationMonProfil extends HttpServlet {
 	            utilisateurManager.modifierMonProfil(u.getPseudo(), u.getEmail(), pseudo, prenom, email, telephone,rue,code_postal,ville,password );
 	            rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 	        } else {
+	        	request.setAttribute("pseudo", pseudo);;
+				request.setAttribute("prenom", prenom);
+				request.setAttribute("email", email);
+				request.setAttribute("telephone", telephone);
+				request.setAttribute("code_postal", code_postal);
+				request.setAttribute("rue", rue);
+				request.setAttribute("ville", ville);
+				request.setAttribute("credit", request.getParameter("credit"));
+	        	request.setAttribute("error2", "Les deux mots de passe sont différents !");
 	            rd = request.getRequestDispatcher("/WEB-INF/modifierMonProfil.jsp");
-	            System.err.println("Les deux mots de passe sont différents !");
 	        }
 
 	    } else {
+		    	request.setAttribute("pseudo", pseudo);;
+				request.setAttribute("prenom", prenom);
+				request.setAttribute("email", email);
+				request.setAttribute("telephone", telephone);
+				request.setAttribute("code_postal", code_postal);
+				request.setAttribute("rue", rue);
+				request.setAttribute("ville", ville);
+				request.setAttribute("credit", request.getParameter("credit"));
+	    		request.setAttribute("error2", "Mauvais mot de passe !");
 	            rd = request.getRequestDispatcher("/WEB-INF/modifierMonProfil.jsp");
-	            System.err.println("Mauvais mot de passe !");
 	    }
 	    rd.forward(request, response);
 
