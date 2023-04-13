@@ -29,6 +29,23 @@
 	    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	}
+	.ImageRemplacement {
+    height: 180px;
+    width: 180px;
+    background-color: #293040;
+    border-radius: 12px;
+    border: 5px solid white;
+}
+		.card.float-right {
+	    border: 3px solid #F2913D;
+	    border-radius: 15px;
+	}
+	a {
+	    color: #F2913D;
+	}
+	a:hover {
+	    color: #F2B84B;
+	}
 </style>
 	<div class="text-center"><h1>Liste des enchères</h1></div>
 	
@@ -128,7 +145,8 @@
 				<div class="card float-right">
 					<div class="row">
 						<div class="col-sm-6">
-				         	<img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt="">
+				         	<!-- <img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt=""> -->
+				         	<div class="ImageRemplacement"></div>
 				        </div>
 				        <div class="col-sm-6">
 				        	<h5 class="card-title">
