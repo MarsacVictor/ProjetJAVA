@@ -9,8 +9,7 @@
 <body>
 <style>
 	.Background {
-    background-color: #293040;
-    color: white;
+    color: black;
     padding: 30px;
     border-radius: 35px;
     width: 550px;

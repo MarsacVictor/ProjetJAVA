@@ -21,11 +21,13 @@ if (session.getAttribute("identifiant") != null) {
 <body>
 <style>
 	.row {
-    background-color: #293040;
     padding: 30px;
-    color: white;
+    color: black;
     border-radius: 35px;
     margin-bottom: 50px;
+        box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	}
 		button.btn.btn-secondary {
 	    background-color: #F2913D;
@@ -54,7 +56,7 @@ if (session.getAttribute("identifiant") != null) {
 	    width: 115px;
 	}
 	img {
-    border: 5px solid white;
+    border: 5px solid black;
     border-radius: 30px;
 }
 </style>

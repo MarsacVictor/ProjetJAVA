@@ -9,7 +9,6 @@
 <body>
 <style>
 	form {
-	    background-color: #293040;
 	    border-radius: 35px;
 	    padding: 2em;
 	    box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
@@ -17,7 +16,7 @@
 	    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	}
 	label.col-sm-2.col-form-label {
-	    color: white;
+	    color: black;
 	    font-size: 20px;
 	}
 	input#ConnexionSubmit {
@@ -86,7 +85,7 @@
 				<%= request.getAttribute("error")  %>
 			<%} }%>
 
-			<div><h6 style="color:white;"><span style="color: red;font-size:15px;position: relative;top: -12px;">*</span> Champs requis</h6></div>
+			<div><h6 style="color:black;"><span style="color: red;font-size:15px;position: relative;top: -12px;">*</span> Champs requis</h6></div>
 			<div class="form-group row">
 				<div style="width:100%;">
 					<input type="submit" id="ConnexionSubmit" name="ConnexionSubmit" class="btn btn-secondary" value="Connexion">

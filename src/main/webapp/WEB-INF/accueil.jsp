@@ -19,12 +19,11 @@
 <body style="background-color: #FFF">
 <style>
 	.ModificationBack {
-	    background-color: #293040;
 	    border-radius: 35px;
 	    padding: 20px;
 	    margin-left: 270px;
 	    margin-right: 270px;
-	    color: white;
+	    color: black;
 	    box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);

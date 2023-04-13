@@ -8,9 +8,8 @@
 </head>
 <style>
 	.row {
-    background-color: #293040;
     padding: 30px;
-    color: white;
+    color: black;
     border-radius: 35px;
     box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
