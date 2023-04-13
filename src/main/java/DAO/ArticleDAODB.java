@@ -25,6 +25,7 @@ public class ArticleDAODB implements ArticleDAO{
 	private static final String SELECT_ARTICLE_BY_ID = "SELECT * FROM ARTICLES_VENDUS WHERE no_article = ?";
 	private static final String SELECT_RETRAIT_BY_ID = "SELECT * FROM RETRAITS WHERE no_article=?";
 	private static final String UPDATE_CREDIT_ARTICLE = "UPDATE ARTICLES_VENDUS SET prix_vente=? WHERE no_article=?";
+	private static final String SELECT_EXISTE_MES_ENCHERE = "SELECT * FROM ARTICLES_VENDUS WHERE no_utilisateur=?";
 	
 	@Override
 	public void insertArticle(Retrait r) {
@@ -348,6 +349,78 @@ public class ArticleDAODB implements ArticleDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+
+	@Override
+	public boolean existeMesEnchere(int no_utilisateur) {
+		boolean dejaEncheri = false;		
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_EXISTE_MES_ENCHERE);
+				pstmt.setInt(1, no_utilisateur);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					dejaEncheri = true;
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return dejaEncheri;
+	}
+
+
+	@Override
+	public List<ArticleVendu> mesArticle(int no_utilisateur) {
+		// TODO Auto-generated method stub
+		Utilisateur u;
+		Categorie ca;
+		List<ArticleVendu> articles = new ArrayList<>();	
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_EXISTE_MES_ENCHERE);
+				pstmt.setInt(1, no_utilisateur);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					u = this.selectById(rs.getInt("no_utilisateur"));
+	            	u.setNo_utilisateur(rs.getInt("no_utilisateur"));
+	            	ca = this.selectByCat(rs.getInt("no_categorie"));
+	                articles.add(new ArticleVendu(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"),u,ca));
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return articles;
 	}
 	
 }

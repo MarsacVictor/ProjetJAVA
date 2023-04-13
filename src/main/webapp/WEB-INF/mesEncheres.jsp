@@ -4,6 +4,9 @@
     <%} else {%>
     		<%@ include file="navbar.jsp" %>	
     	<%} %>
+<%@ page import="java.util.List" %>
+<%@ page import="Class.Categorie" %>
+<%@ page import="Class.ArticleVendu" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,5 +16,37 @@
 </head>
 <body>
 	<div class="text-center"><h1>Mes enchères</h1></div>
+	<%if (request.getAttribute("error") != null) {%> 
+				<%= request.getAttribute("error")  %>
+	<%} else {%>
+			<div class="container" style="margin-top:35px;">
+		<div class="row">
+			
+			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>
+			<div class="col-lg-4" style="margin-bottom:20px;">
+				<div class="card float-right">
+					<div class="row">
+						<div class="col-sm-6">
+				         	<img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt="">
+				        </div>
+				        <div class="col-sm-6">
+				        	<h5 class="card-title">
+								<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionDetailEncheres?<%= article.getNoArticle()%>"><%}%>
+									<%= article.getNomArticle() %>
+								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							
+							</h5>
+				        	<p>Prix: <%= article.getPrixVente() %></p>
+				        	<p>Fin de l'enchère: <%= article.getDateFinEncheres() %></p>
+				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur?<%= article.getUtilisateur().getNo_utilisateur()%>"> <%}%>
+											<%= article.getUtilisateur().getPseudo() %>
+										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
+							</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<%} %>
+	<% } %>
 </body>
 </html>

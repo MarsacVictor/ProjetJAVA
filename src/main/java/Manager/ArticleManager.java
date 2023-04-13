@@ -55,4 +55,14 @@ public class ArticleManager {
 		
 	}
 
+	public boolean existeMesEnchere(int no_utilisateur) {
+		// TODO Auto-generated method stub
+		return this.ArticleDAO.existeMesEnchere(no_utilisateur);
+	}
+
+	public List<ArticleVendu> mesArticle(int no_utilisateur) {
+		// TODO Auto-generated method stub
+		return this.ArticleDAO.mesArticle(no_utilisateur);
+	}
+
 }

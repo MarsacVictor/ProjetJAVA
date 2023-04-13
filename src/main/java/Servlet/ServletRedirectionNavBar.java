@@ -50,8 +50,19 @@ public class ServletRedirectionNavBar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 if(request.getServletPath().equals("/DirectionEncheres")) {
-	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/mesEncheres.jsp");
-				rd.forward(request, response);
+			 List<ArticleVendu> articles = null;
+			 HttpSession session = request.getSession();
+			 ArticleManager articleManager = new ArticleManager();
+			 UtilisateurManager utilisateurManager = new UtilisateurManager();
+			 Utilisateur u = utilisateurManager.selectionnerUtilisateur(((String)session.getAttribute("identifiant")));
+			 if(articleManager.existeMesEnchere(u.getNo_utilisateur())) {
+				 articles = articleManager.mesArticle(u.getNo_utilisateur());
+			 } else {
+				 request.setAttribute("error", "Vous n'avez pas crée d'article");	
+			 }
+			 request.setAttribute("articles", articles);	
+	         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/mesEncheres.jsp");
+			 rd.forward(request, response);
 	     }
 		 else if(request.getServletPath().equals("/DirectionVendreUnArticle")){
 			HttpSession session = request.getSession();
@@ -71,7 +82,6 @@ public class ServletRedirectionNavBar extends HttpServlet {
 			 HttpSession session = request.getSession();
 			 UtilisateurManager utilisateurManager = new UtilisateurManager();			
 			 Utilisateur u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
-			 System.out.println(u.getEmail());
 			 request.setAttribute("pseudo", u.getPseudo());
 			 request.setAttribute("nom", u.getNom());
 			 request.setAttribute("prenom", u.getPrenom());
