@@ -50,6 +50,8 @@ public class ServletEncherir extends HttpServlet {
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
 		ArticleVendu av = articleManager.selectArticleID(((ArticleVendu)session.getAttribute("articleEnchere")).getNoArticle());
+		System.out.println(av.getDescription());
+		System.out.println(u.getCredit());
 		if(u.getCredit() - Integer.parseInt(request.getParameter("credit")) >= 0 ) {
 			enchereManager.encheri(u, av, Integer.parseInt(request.getParameter("credit")));
 			utilisateurManager.updateCredit(u.getPseudo(), u.getCredit() - Integer.parseInt(request.getParameter("credit")));
