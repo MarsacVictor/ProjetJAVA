@@ -42,6 +42,19 @@
 	    margin-top: 25px;
 	    margin-inline: 30px;
 	}	
+			button.btn.btn-secondary:hover {
+	    background-color: #F2B84B;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
 </style>
 <div class="container">
 	<div class="row">
