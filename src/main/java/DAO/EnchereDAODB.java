@@ -263,4 +263,10 @@ public class EnchereDAODB implements EnchereDAO{
 
 		return dejaEncheri;
 	}
+
+	@Override
+	public boolean enchereArticle(int idAV) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
