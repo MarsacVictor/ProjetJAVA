@@ -19,7 +19,7 @@
 		.ImageRemplacement {
     height: 180px;
     width: 180px;
-    background-color: #293040;
+    background-color: #F2913D;
     border-radius: 12px;
     border: 5px solid white;
 }
