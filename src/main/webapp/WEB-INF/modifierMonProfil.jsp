@@ -8,6 +8,39 @@
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<style>
+	.container {
+	    background-color: #293040;
+	    color: white;
+	    border-radius: 35px;
+	    padding: 35px;
+	}
+		button.btn.btn-secondary {
+	    background-color: #F2913D;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	}	
+		button.btn.btn-secondary:hover {
+	    background-color: #F2B84B;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
+</style>
 	<div class="text-center">
 		<h1>Mon profil</h1>
 	</div>
@@ -100,6 +133,7 @@
 			</div>
 				<div class="text-center">
 					<button type="submit" class="btn btn-secondary">Enregistrer</button>
+					<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 					<a href="${pageContext.request.contextPath}/RedirectionSuppression"><button type="button" class="btn btn-secondary">Supprimer mon compte</button></a>
 				</div>
 			</form>

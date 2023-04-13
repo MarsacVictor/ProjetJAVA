@@ -10,6 +10,11 @@
 <script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
 </head>
 <body>
+<style>
+body {
+    overflow-x: hidden;
+}
+</style>
 	<div class="text-center"><h1>Nouvelle vente</h1></div>
 
 	<form method="post" class="" action="servletNouvelleArticle">
@@ -61,7 +66,7 @@
 			<div class="form-group col-md-6">
 				<label for="MiseaPrix"><h3>Mise à prix:</h3></label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Prix"
+					<input type="number" class="form-control" placeholder="Prix"
 						aria-label="MiseaPrix" name="prix" id ="prix" required>
 				</div>
 			</div>
