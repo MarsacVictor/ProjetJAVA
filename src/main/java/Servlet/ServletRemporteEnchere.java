@@ -15,6 +15,7 @@ import Manager.*;
 /**
  * Servlet implementation class ServletRemporteEnchere
  */
+@WebServlet("/DirectionRemporteEnchere")
 public class ServletRemporteEnchere extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
