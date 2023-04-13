@@ -144,6 +144,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				while(rs.next())
 				{
 					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');
+					u.setNo_utilisateur(rs.getInt("no_utilisateur"));
 				}
 			}
 			catch(Exception e)
