@@ -11,4 +11,5 @@ public interface EnchereDAO {
 	public Enchere enchereARembourser(int idU, int idAV);
 	public boolean utilisateurDejaEncheriMax(int no_utilisateur, int noArticle);
 	public boolean enchereArticle(int idAV);
+	public int idRemporte(int noArticle);
 }

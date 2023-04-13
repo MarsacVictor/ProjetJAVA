@@ -49,5 +49,10 @@ private EnchereDAO EnchereDAO;
 		return this.EnchereDAO.enchereArticle(idAV);
 	}
 
+	public int enchereRemporte(int noArticle) {
+		// TODO Auto-generated method stub
+		return this.EnchereDAO.idRemporte(noArticle);
+	}
+
 
 }

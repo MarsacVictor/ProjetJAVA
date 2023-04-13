@@ -64,5 +64,8 @@ public class ArticleManager {
 		// TODO Auto-generated method stub
 		return this.ArticleDAO.mesArticle(no_utilisateur);
 	}
-
+	public void gagnerEnchere(ArticleVendu av) {
+		// TODO Auto-generated method stub
+		this.ArticleDAO.gagnerEnchere(av);
+	}
 }

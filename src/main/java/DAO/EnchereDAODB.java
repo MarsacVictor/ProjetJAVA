@@ -267,6 +267,67 @@ public class EnchereDAODB implements EnchereDAO{
 	@Override
 	public boolean enchereArticle(int idAV) {
 		// TODO Auto-generated method stub
-		return false;
+		boolean dejaEncheri = false;		
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_ENCHERE_IDAV);
+				pstmt.setInt(1, idAV);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					dejaEncheri = true;
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+		return dejaEncheri;
+	}
+
+	@Override
+	public int idRemporte(int noArticle) {
+		// TODO Auto-generated method stub
+		int id = 0;		
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			try
+			{
+				cnx.setAutoCommit(false);
+				PreparedStatement pstmt;
+				ResultSet rs;
+				pstmt = cnx.prepareStatement(SELECT_ENCHERE_MAX);
+				pstmt.setInt(1, noArticle);
+				rs = pstmt.executeQuery();
+				while(rs.next())
+				{
+					id = rs.getInt("no_utilisateur");
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				cnx.rollback();
+				throw e;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+
+		return id;
 	}
 }
