@@ -96,7 +96,7 @@
 	</div>
 </div>
 <div class="text-center">
-	<a href=""><button type="button" class="btn btn-secondary" style="margin-left:50px;">Mot de passe oublié</button></a>
+	<a href=""><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="En cours de développement" style="margin-left:50px;">Mot de passe oublié</button></a>
 	<a href="${pageContext.request.contextPath}/retourAccueil"><button type="button" class="btn btn-secondary">Annuler</button></a>
 </div>
 </body>

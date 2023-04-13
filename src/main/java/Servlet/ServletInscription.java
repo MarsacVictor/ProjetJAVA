@@ -94,7 +94,7 @@ public class ServletInscription extends HttpServlet {
 					session.setAttribute("identifiant", pseudo);
 					session.setMaxInactiveInterval(300);	
 					request.setAttribute("identifiant", pseudo);
-					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+					rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
 					
 				} else {
 					request.setAttribute("error2", "L'email ou le pseudo existe déjà !");
