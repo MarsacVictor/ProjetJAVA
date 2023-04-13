@@ -55,7 +55,7 @@ if (session.getAttribute("identifiant") != null) {
 	    cursor: pointer;
 	    width: 115px;
 	}
-	img {
+	.imageVente {
     border: 5px solid black;
     border-radius: 30px;
 }
@@ -66,7 +66,7 @@ if (session.getAttribute("identifiant") != null) {
 			<div class="col-lg-4">
 				<!-- IMAGE -->
 				<div>
-					<img src="https://dummyimage.com/300.png/09f/fff" width="300" height="300" alt="Photo_Produit">
+					<img src="https://dummyimage.com/300.png/09f/fff" width="300" class="imageVente" height="300" alt="Photo_Produit">
 				</div>
 			</div>
 			

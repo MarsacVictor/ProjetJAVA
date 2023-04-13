@@ -21,6 +21,7 @@ public class EnchereDAODB implements EnchereDAO{
 	private static final String SELECT_NOT_MAX = "SELECT * FROM ENCHERES where no_utilisateur=? and no_article=? and montant_enchere = (select max(montant_enchere) from ENCHERES where no_article = ?)";
 	private static final String SELECT_ENCHERE_IDAV = "SELECT * FROM ENCHERES WHERE no_article=?" ;
 	private static final String SELECT_ENCHERE_MAX = "SELECT * FROM ENCHERES where montant_enchere = (select max(montant_enchere) from ENCHERES where no_article = ?)";
+
 	
 	@Override
 	public void insertEnchere(ArticleVendu id, Utilisateur u, int credit) {
@@ -241,6 +242,7 @@ public class EnchereDAODB implements EnchereDAO{
 				pstmt.setInt(1, no_utilisateur);
 				pstmt.setInt(2, noArticle);
 				pstmt.setInt(3, noArticle);
+				pstmt.setInt(4, noArticle);
 				rs = pstmt.executeQuery();
 				while(rs.next())
 				{
@@ -259,38 +261,6 @@ public class EnchereDAODB implements EnchereDAO{
 			e.printStackTrace();			
 		}
 
-		return dejaEncheri;
-	}
-
-	@Override
-	public boolean enchereArticle(int idAV) {
-		boolean dejaEncheri = false;		
-		try(Connection cnx = ConnectionProvider.getConnection())
-		{
-			try
-			{
-				cnx.setAutoCommit(false);
-				PreparedStatement pstmt;
-				ResultSet rs;
-				pstmt = cnx.prepareStatement(SELECT_ENCHERE_IDAV);
-				pstmt.setInt(1, idAV);
-				rs = pstmt.executeQuery();
-				while(rs.next())
-				{
-					dejaEncheri = true;
-				}
-			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-				cnx.rollback();
-				throw e;
-			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();			
-		}
 		return dejaEncheri;
 	}
 }

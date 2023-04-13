@@ -204,14 +204,4 @@
     <servlet-name>ServletEncherir</servlet-name>
     <url-pattern>/ServletEncherir</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ServletRemporteEnchere</display-name>
-    <servlet-name>ServletRemporteEnchere</servlet-name>
-    <servlet-class>Servlet.ServletRemporteEnchere</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletRemporteEnchere</servlet-name>
-    <url-pattern>/ServletRemporteEnchere</url-pattern>
-  </servlet-mapping>
 </web-app>
