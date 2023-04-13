@@ -13,7 +13,41 @@
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	
+<style>
+	.container {
+	    color: black;
+	    border-radius: 35px;
+	    padding: 35px;
+	        box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	}
+		button.btn.btn-secondary {
+	    background-color: #F2913D;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: -30px;
+	    text-decoration:none;
+	}	
+		button.btn.btn-secondary:hover {
+	    background-color: #F2B84B;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: -30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
+</style>
 	<div class="text-center">
 		<h1>Inscription</h1>
 	</div>
