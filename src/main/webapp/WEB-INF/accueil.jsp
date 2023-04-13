@@ -46,6 +46,32 @@
 	a:hover {
 	    color: #F2B84B;
 	}
+	button.btn.btn-light:hover {
+	    background-color: #F2B84B;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
+		button.btn.btn-light{
+	    background-color:#F2913D;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
 </style>
 	<div class="text-center"><h1>Liste des enchères</h1></div>
 	
@@ -82,7 +108,7 @@
 			</form>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-light" style=" display: flex; margin: 0 auto; font-size: 20px; margin-top: 20px; background-color: #F2913D; border: none; color: white; border-radius: 35px; box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); -webkit-box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); -moz-box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); ">Rechercher</button>
+		<div class="text-center"><button type="submit" class="btn btn-light">Rechercher</button></div>
 	</div>
 	
 	<br>
