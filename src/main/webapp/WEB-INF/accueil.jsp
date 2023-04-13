@@ -139,7 +139,7 @@
 							</h5>
 				        	<p>Prix: <%= article.getPrixVente() %></p>
 				        	<p>Fin de l'enchère: <%= article.getDateFinEncheres() %></p>
-				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur"?<%= article.getUtilisateur().getNo_utilisateur()%>"> <%}%>
+				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur?<%= article.getUtilisateur().getNo_utilisateur()%>"> <%}%>
 											<%= article.getUtilisateur().getPseudo() %>
 										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
 							</p>
