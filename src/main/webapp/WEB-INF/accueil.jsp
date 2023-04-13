@@ -30,7 +30,7 @@
 						<input style="margin-left: 110px; width: 250px; border: 3px solid #F2913D; border-radius: 999px;" type="text" class="form-control" placeholder="Le nom de l'article contient">
 					</div>
 				</form>
-			</div>f
+			</div>
 		</div>
 	</div>
 	
