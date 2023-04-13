@@ -29,6 +29,49 @@
 	    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
 	}
+	.ImageRemplacement {
+    height: 180px;
+    width: 180px;
+    background-color: #293040;
+    border-radius: 12px;
+    border: 5px solid white;
+}
+		.card.float-right {
+	    border: 3px solid #F2913D;
+	    border-radius: 15px;
+	}
+	a {
+	    color: #F2913D;
+	}
+	a:hover {
+	    color: #F2B84B;
+	}
+	button.btn.btn-light:hover {
+	    background-color: #F2B84B;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
+		button.btn.btn-light{
+	    background-color:#F2913D;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	    text-decoration:none;
+	    cursor: pointer;
+	}
 </style>
 	<div class="text-center"><h1>Liste des enchères</h1></div>
 	
@@ -65,7 +108,7 @@
 			</form>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-light" style=" display: flex; margin: 0 auto; font-size: 20px; margin-top: 20px; background-color: #F2913D; border: none; color: white; border-radius: 35px; box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); -webkit-box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); -moz-box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); ">Rechercher</button>
+		<div class="text-center"><button type="submit" class="btn btn-light">Rechercher</button></div>
 	</div>
 	
 	<br>
@@ -128,7 +171,8 @@
 				<div class="card float-right">
 					<div class="row">
 						<div class="col-sm-6">
-				         	<img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt="">
+				         	<!-- <img style="height:180px;" src="https://img.toolstud.io/240x240/3b5998/fff&text=+180x180+" alt=""> -->
+				         	<div class="ImageRemplacement"></div>
 				        </div>
 				        <div class="col-sm-6">
 				        	<h5 class="card-title">
