@@ -35,4 +35,22 @@ public class Enchere {
 		this.dateEnchere = dateEnchere;
 		MontantEnchere = montantEnchere;
 	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public ArticleVendu getArticle() {
+		return article;
+	}
+
+	public Date getDateEnchere() {
+		return dateEnchere;
+	}
+
+	public int getMontantEnchere() {
+		return MontantEnchere;
+	}
+	
+	
 }

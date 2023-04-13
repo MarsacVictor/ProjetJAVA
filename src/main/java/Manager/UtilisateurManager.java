@@ -2,6 +2,7 @@ package Manager;
 
 import DAO.DAOFactory;
 import DAO.UtilisateurDAO;
+import Class.Enchere;
 import Class.Utilisateur;
 
 public class UtilisateurManager {
@@ -43,5 +44,11 @@ public class UtilisateurManager {
 	public void updateCredit(String pseudo, int i) {
 		// TODO Auto-generated method stub
 		this.UtilisateurDAO.updateCreditUtilisateur(pseudo, i);
+	}
+
+	public void recuperationCredit(Enchere creditRemboursement) {
+		
+		this.UtilisateurDAO.remboursement(creditRemboursement);
+		
 	}
 }
