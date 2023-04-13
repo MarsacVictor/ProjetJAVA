@@ -14,4 +14,5 @@ public interface ArticleDAO {
 	public void updateCreditArticle(int noArticle, int credit);
 	public boolean existeMesEnchere(int no_utilisateur);
 	public List<ArticleVendu> mesArticle(int no_utilisateur);
+	public void gagnerEnchere(ArticleVendu av);
 }

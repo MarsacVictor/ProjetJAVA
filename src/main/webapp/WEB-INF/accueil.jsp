@@ -5,6 +5,7 @@
     		<%@ include file="navbar.jsp" %>	
     	<%} %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Date" %>
 <%@ page import="Class.Categorie" %>
 <%@ page import="Class.ArticleVendu" %>
 
@@ -164,7 +165,7 @@
 	<!-- Carte -->
 	<div class="container" style="margin-top:35px;">
 		<div class="row">
-			
+		<%Date date = new Date(); %>	
 			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>
 			<div class="col-lg-4" style="margin-bottom:20px;">
 				<div class="card float-right">
@@ -182,7 +183,8 @@
 							</h5>
 				        	<p>Prix: <%= article.getPrixVente() %></p>
 				        	<p>Fin de l'enchère: <%= article.getDateFinEncheres() %></p>
-				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%><a href="DirectionProfilUtilisateur?<%= article.getUtilisateur().getNo_utilisateur()%>"> <%}%>
+				        	<p>Vendeur:<%if (session.getAttribute("identifiant") != null) {%>
+				        	<a href="<%if(date.compareTo(article.getDateFinEncheres()) <= 0){ %>DirectionProfilUtilisateur?<%= article.getUtilisateur().getNo_utilisateur()%> <%} else {%>DirectionRemporteEnchere<%= article.getNoArticle()%><%}%>"> <%}%>
 											<%= article.getUtilisateur().getPseudo() %>
 										<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
 							</p>
