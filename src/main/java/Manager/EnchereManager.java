@@ -47,4 +47,6 @@ private EnchereDAO EnchereDAO;
 		// TODO Auto-generated method stub
 		return this.EnchereDAO.enchereArticle(idAV);
 	}
+
+
 }

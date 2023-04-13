@@ -20,6 +20,7 @@ public class EnchereDAODB implements EnchereDAO{
 	private static final String SELECT_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE no_utilisateur=?";
 	private static final String SELECT_NOT_MAX = "SELECT * FROM ENCHERES where no_utilisateur=? and no_article=? and montant_enchere = (select max(montant_enchere) from ENCHERES where no_article = ?)";
 	private static final String SELECT_ENCHERE_IDAV = "SELECT * FROM ENCHERES WHERE no_article=?" ;
+	private static final String SELECT_ENCHERE_MAX = "SELECT * FROM ENCHERES where montant_enchere = (select max(montant_enchere) from ENCHERES where no_article = ?)";
 	
 	@Override
 	public void insertEnchere(ArticleVendu id, Utilisateur u, int credit) {

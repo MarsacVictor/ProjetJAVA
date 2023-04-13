@@ -26,6 +26,7 @@ public class ArticleDAODB implements ArticleDAO{
 	private static final String SELECT_RETRAIT_BY_ID = "SELECT * FROM RETRAITS WHERE no_article=?";
 	private static final String UPDATE_CREDIT_ARTICLE = "UPDATE ARTICLES_VENDUS SET prix_vente=? WHERE no_article=?";
 	private static final String SELECT_EXISTE_MES_ENCHERE = "SELECT * FROM ARTICLES_VENDUS WHERE no_utilisateur=?";
+	private static final String UPDATE_PRIX = "UPDATE ARTICLES_VENDUS SET prix_vente=0 WHERE no_article=?";;
 	
 	@Override
 	public void insertArticle(Retrait r) {
@@ -421,6 +422,21 @@ public class ArticleDAODB implements ArticleDAO{
 			e.printStackTrace();			
 		}
 		return articles;
+	}
+
+
+	@Override
+	public void gagnerEnchere(ArticleVendu av) {
+		// TODO Auto-generated method stub
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(UPDATE_PRIX);
+			pstmt.setInt(1, av.getNoArticle());	
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
