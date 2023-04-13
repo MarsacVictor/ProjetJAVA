@@ -40,6 +40,8 @@ public class ServletAccueil extends HttpServlet {
 		ArticleManager ArticleManager = new ArticleManager();	
 	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
 	    
+	    ArticleManager.finEnchereArticle();
+	    
 	    request.setAttribute("articles", articles);	
 		request.setAttribute("listCategorie", listC);
 		request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);

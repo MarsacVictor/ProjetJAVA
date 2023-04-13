@@ -24,7 +24,7 @@ public class ArticleDAODB implements ArticleDAO{
 	private static final String SELECT_CATEGORIE_BY_ID = "SELECT no_categorie FROM CATEGORIES WHERE libelle= ?";
 	private static final String SELECT_ARTICLE_BY_ID = "SELECT * FROM ARTICLES_VENDUS WHERE no_article = ?";
 	private static final String SELECT_RETRAIT_BY_ID = "SELECT * FROM RETRAITS WHERE no_article=?";
-	private static final String UPDATE_CREDIT_ARTICLE = "UPDATE UTILISATEURS SET prix_vente=? WHERE no_article=?";
+	private static final String UPDATE_CREDIT_ARTICLE = "UPDATE ARTICLES_VENDUS SET prix_vente=? WHERE no_article=?";
 	
 	@Override
 	public void insertArticle(Retrait r) {

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 import Class.ArticleVendu;
+import Class.Enchere;
 import Class.Retrait;
 import Class.Utilisateur;
 
@@ -22,7 +23,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 	private static final String DELETE_UTILISATEUR_BY_ID = "DELETE FROM UTILISATEURS WHERE pseudo = ? ";
 	private static final String SELECT_DETAIL_ENCHERES = "select * from UTILISATEURS WHERE no_utilisateur = ?";
 	private static final String UPDATE_CREDIT_UTILISATEUR = "UPDATE UTILISATEURS SET credit=? WHERE pseudo=?";
-
+	private static final String UPDATE_REMBOURSEMENT = "UPDATE UTILISATEURS SET credit=? WHERE no_utilisateur=?";
 	
 	@Override
 	public boolean insertUtilisateur(Utilisateur utilisateur) {
@@ -144,6 +145,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				while(rs.next())
 				{
 					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');
+					u.setNo_utilisateur(rs.getInt("no_utilisateur"));
 				}
 			}
 			catch(Exception e)
@@ -251,7 +253,7 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 				rs = pstmt.executeQuery();
 				while(rs.next())
 				{				
-					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');;
+					u = new Utilisateur(rs.getString("pseudo"), rs.getString("nom"),rs.getString("prenom"),rs.getString("email"),rs.getString("telephone"),rs.getString("rue"),rs.getString("code_postal"),rs.getString("ville"),rs.getString("mot_de_passe"),rs.getInt("credit"),'0');
 				}
 			}
 			catch(Exception e)
@@ -276,6 +278,22 @@ public class UtilisateurDAODB implements UtilisateurDAO {
 			PreparedStatement pstmt = cnx.prepareStatement(UPDATE_CREDIT_UTILISATEUR);
 			pstmt.setInt(1, i);
 			pstmt.setString(2, pseudo);		
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void remboursement(Enchere creditRemboursement) {
+		// TODO Auto-generated method stub
+		System.out.println(creditRemboursement.getMontantEnchere());
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(UPDATE_REMBOURSEMENT);
+			pstmt.setInt(1, creditRemboursement.getUtilisateur().getCredit());
+			pstmt.setInt(2, creditRemboursement.getUtilisateur().getNo_utilisateur());		
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

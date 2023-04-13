@@ -1,6 +1,8 @@
 package DAO;
 
 import java.util.List;
+
+import Class.Enchere;
 import Class.Utilisateur;
 
 public interface UtilisateurDAO {
@@ -14,4 +16,5 @@ public interface UtilisateurDAO {
 	public void supprimerUtilisateur(String pseudo);
 	public Utilisateur selectUtilisateurByID(int iD);
 	public void updateCreditUtilisateur(String pseudo, int i);
+	public void remboursement(Enchere creditRemboursement);
 }

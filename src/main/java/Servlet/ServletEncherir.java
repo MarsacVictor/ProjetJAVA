@@ -10,8 +10,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
 import Class.ArticleVendu;
+import Class.Categorie;
 import Class.Utilisateur;
 
 /**
@@ -50,16 +52,31 @@ public class ServletEncherir extends HttpServlet {
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
 		ArticleVendu av = articleManager.selectArticleID(((ArticleVendu)session.getAttribute("articleEnchere")).getNoArticle());
-		System.out.println(av.getDescription());
-		System.out.println(u.getCredit());
-		if(u.getCredit() - Integer.parseInt(request.getParameter("credit")) >= 0 ) {
-			enchereManager.encheri(u, av, Integer.parseInt(request.getParameter("credit")));
-			utilisateurManager.updateCredit(u.getPseudo(), u.getCredit() - Integer.parseInt(request.getParameter("credit")));
+		if((u.getCredit() - Integer.parseInt(request.getParameter("credit"))) >= 0 ) {
+			if(enchereManager.utilisateurDejaEncheri(u.getNo_utilisateur(), av.getNoArticle())) {
+				enchereManager.updateEnchere(u.getNo_utilisateur(), av.getNoArticle(), Integer.parseInt(request.getParameter("credit")));
+			} else {
+				enchereManager.encheri(u, av, Integer.parseInt(request.getParameter("credit")));
+			}
 			articleManager.updateCreditArticle(av.getNoArticle(), Integer.parseInt(request.getParameter("credit")));
+			if(enchereManager.dejaEncheri(u.getNo_utilisateur(), av.getNoArticle())) {
+				utilisateurManager.recuperationCredit(enchereManager.creditRemboursement(u.getNo_utilisateur(), av.getNoArticle()));
+			}
+			utilisateurManager.updateCredit(u.getPseudo(), u.getCredit() - Integer.parseInt(request.getParameter("credit")));						
 		} else {
 			request.setAttribute("error", "Pas assez de crédit !");
-            rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 		}
+		CategorieManager CategorieManager = new CategorieManager();			
+		List<Categorie> listC = CategorieManager.selectionnerAllCategorie();
+	
+		ArticleManager ArticleManager = new ArticleManager();	
+	    List<ArticleVendu> articles = ArticleManager.getArticleDAO();
+	    
+	    request.setAttribute("articles", articles);	
+		request.setAttribute("listCategorie", listC);
+		
+		rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+		rd.forward(request, response);
 	}
 
 }

@@ -50,4 +50,9 @@ public class ArticleManager {
 		this.ArticleDAO.updateCreditArticle(noArticle, credit);
 	}
 
+	public ArticleVendu finEnchereArticle() {
+		return null;
+		
+	}
+
 }
