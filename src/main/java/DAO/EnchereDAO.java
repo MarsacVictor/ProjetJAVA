@@ -9,4 +9,5 @@ public interface EnchereDAO {
 	public void updateEnchere(int no_utilisateur, int noArticle, int credit);
 	public boolean DejaEncheri(int idU, int idAV);
 	public Enchere enchereARembourser(int idU, int idAV);
+	public boolean utilisateurDejaEncheriMax(int no_utilisateur, int noArticle);
 }

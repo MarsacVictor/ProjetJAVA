@@ -37,4 +37,9 @@ private EnchereDAO EnchereDAO;
 		// TODO Auto-generated method stub
 		return this.EnchereDAO.enchereARembourser(idU, idAV);
 	}
+
+	public boolean utilisateurDejaEncheriMax(int no_utilisateur, int noArticle) {
+		// TODO Auto-generated method stub
+		return this.EnchereDAO.utilisateurDejaEncheriMax(no_utilisateur, noArticle);
+	}
 }

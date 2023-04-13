@@ -34,15 +34,26 @@ public class ServletRedirectionEncheres extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		boolean encheri = true;
+		Utilisateur u;
 		 if(request.getServletPath().equals("/DirectionDetailEncheres")) {
 			 	
+			 	EnchereManager enchereManager = new EnchereManager();
+			 	UtilisateurManager utilisateurManager = new UtilisateurManager();
 			 	ArticleManager articleManager = new ArticleManager();
 			 	ArticleVendu av = articleManager.selectArticleID(Integer.parseInt(request.getQueryString()));
 			 	Retrait r = articleManager.selectRetraitID(Integer.parseInt(request.getQueryString()));
 			 	HttpSession session = request.getSession();
 			 	session.setAttribute("articleEnchere", av);	
 			 	session.setAttribute("retraitEnchere", r);
-			 	
+			 	if(session.getAttribute("identifiant").equals(av.getUtilisateur().getPseudo())) {
+			 		encheri = false;
+			 	}
+			 	u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
+			 	if ( enchereManager.utilisateurDejaEncheriMax(u.getNo_utilisateur(), av.getNoArticle())) {
+			 		encheri = false;
+			 	}
+			 	request.setAttribute("encheri", encheri);
 	        	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/detailVenteEncheres.jsp");
 				rd.forward(request, response);
 	     }
