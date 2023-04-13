@@ -73,7 +73,7 @@
 				<%= request.getAttribute("error")  %>
 			<%} }%>
 
-			<div><h6 style="color:white;"><span style="color: red;font-size:20px;position: relative;top: -12px;">*</span> Champs obligatoire</h6></div>
+			<div><h6 style="color:white;"><span style="color: red;font-size:15px;position: relative;top: -12px;">*</span> Champs requis</h6></div>
 			<div class="form-group row">
 				<div style="width:100%;">
 					<input type="submit" id="ConnexionSubmit" name="ConnexionSubmit" class="btn btn-secondary" value="Connexion">
