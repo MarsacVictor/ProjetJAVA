@@ -6,7 +6,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<style>
+	nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+	    background-color: white !important;
+	    border-bottom: 2px solid grey;
+	}
+</style>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -18,8 +23,8 @@
 
     <div class="d-flex align-items-center">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionInscription">S'inscrire</a></li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionConnexion">Se connecter</a></li>
+			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionInscription"><button type="button" class="btn btn-outline-primary">S'inscrire</button></a></li>
+			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionConnexion"><button type="button" class="btn btn-outline-primary">Se connecter</button></a></li>
 		</ul>
 	</div>
 </nav>

@@ -7,6 +7,42 @@
 <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<style>
+	form {
+	    background-color: #293040;
+	    border-radius: 35px;
+	    padding: 2em;
+	    box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	}
+	label.col-sm-2.col-form-label {
+	    color: white;
+	    font-size: 20px;
+	}
+	input#ConnexionSubmit {
+	    display: flex;
+	    margin: 0 auto;
+	    background-color: #F2913D;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	}
+	button.btn.btn-secondary {
+	    background-color: #F2913D;
+	    border-radius: 25px;
+	    font-size: 20px;
+	    border: 0px;
+	    box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 4px 4px 25px -3px rgba(0,0,0,0.75);
+	    margin-top: 25px;
+	    margin-inline: 30px;
+	}	
+</style>
 <div class="container">
 	<div class="row">
 		<form method="post" class="" action="${pageContext.request.contextPath}/servletConn" style=" width: 800px; display: block; margin: 0 auto; margin-top: 150px; ">
@@ -37,17 +73,9 @@
 				<%= request.getAttribute("error")  %>
 			<%} }%>
 
+			<div><h6 style="color:white;"><span style="color: red;font-size:20px;position: relative;top: -12px;">*</span> Champs obligatoire</h6></div>
 			<div class="form-group row">
-				<div class="col-sm-10 offset-sm-2">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" id="seSouvenir">
-						<label class="form-check-label" for="seSouvenir">Se souvenir de moi</label>
-					</div>
-				</div>
-			</div>
-			<div><h6><span style="color: red;font-size:20px;position: relative;top: -12px;">*</span> Champs obligatoire</h6></div>
-			<div class="form-group row">
-				<div class="col-sm-10">
+				<div style="width:100%;">
 					<input type="submit" id="ConnexionSubmit" name="ConnexionSubmit" class="btn btn-secondary" value="Connexion">
 				</div>
 			</div>

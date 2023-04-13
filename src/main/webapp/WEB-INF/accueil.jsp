@@ -17,34 +17,44 @@
     <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #FFF">
-	<div class="text-center" style="color: #FFF"><h1>Liste des enchères</h1></div>
+<style>
+	.ModificationBack {
+	    background-color: #293040;
+	    border-radius: 35px;
+	    padding: 20px;
+	    margin-left: 270px;
+	    margin-right: 270px;
+	    color: white;
+	    box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 10px 10px 45px -3px rgba(0,0,0,0.75);
+	}
+</style>
+	<div class="text-center"><h1>Liste des enchères</h1></div>
 	
 	<br>
+	<div class="ModificationBack">
 	<div class="container">
 		<div class="row">	
-			<h3 style="color: #F2913D">Filtres:</h3>
-			<br>
-			<div>
-				<form>
-					<div class="form-row">
-						<input style="margin-left: 110px; width: 250px; border: 3px solid #F2913D; border-radius: 999px;" type="text" class="form-control" placeholder="Le nom de l'article contient">
+			<div class="col-lg-6">
+					<h3 style="color: #F2913D">Filtres:</h3>
+					<br>
+					<div>
+						<form>
+							<div class="form-row">
+								<input style="border: 3px solid #F2913D; border-radius: 999px;" type="text" class="form-control" placeholder="Le nom de l'article contient">
+							</div>
+						</form>
 					</div>
-				</form>
 			</div>
-		</div>
-	</div>
-	
-	<br>
-	
-	<div class="container">
-		<div class="row">
-			<div>
+			<div class="col-lg-6">
+				<div>
 				<h3 style="color: #F2913D">Catégorie : </h3>
 			</div>		
 			<form style="margin-left: 50px;">
 				<div class="form-row">
 					<div class="col-auto my-1">
-					      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="border: 3px solid #f2913d">
+					      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="border: 3px solid #f2913d; margin-top:25px;">
 					        <option selected>Choisir</option>
 					        <%for(Categorie c : (List<Categorie>)request.getAttribute("listCategorie")) {%>
 					        	<option value=<%= c.getLibelle() %>><%= c.getLibelle() %></option>
@@ -53,9 +63,15 @@
 					</div>
 				</div>
 			</form>
-			<button type="submit" class="btn btn-light" style="margin-left: 50px;">Rechercher</button>
+			</div>
 		</div>
+		<button type="submit" class="btn btn-light" style=" display: flex; margin: 0 auto; font-size: 20px; margin-top: 20px; background-color: #F2913D; border: none; color: white; border-radius: 35px; box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); -webkit-box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); -moz-box-shadow: 4px 4px 45px -3px rgba(0,0,0,0.75); ">Rechercher</button>
 	</div>
+	
+	<br>
+
+	
+	
 	 <%if (session.getAttribute("identifiant") != null) {%> 
 	 <div class="container">
 	 	<div class="row">
@@ -100,10 +116,11 @@
 	 	</div>
 	 </div>
     <%}%>
+    </div>
 	<br>
 	
 	<!-- Carte -->
-	<div class="container">
+	<div class="container" style="margin-top:35px;">
 		<div class="row">
 			
 			<% for (ArticleVendu article : (List<ArticleVendu>) request.getAttribute("articles")) { %>

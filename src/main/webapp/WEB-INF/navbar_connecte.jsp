@@ -6,7 +6,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<style>
+	nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+	    background-color: white !important;
+	    border-bottom: 2px solid grey;
+	}
+</style>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -18,16 +23,16 @@
 	
 	    <div class="d-flex align-items-center">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionEncheres">Mes enchères</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionEncheres"><button type="button" class="btn btn-outline-primary">Mes enchères</button></a></li>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionVendreUnArticle">Vendre un article</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionVendreUnArticle"><button type="button" class="btn btn-outline-primary">Vendre un article</button></a></li>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionMonProfil">Mon profil</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionMonProfil"><button type="button" class="btn btn-outline-primary">Mon profil</button></a></li>
 			</ul>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionDeconnexion">Déconnexion</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/DirectionDeconnexion"><button type="button" class="btn btn-outline-primary">Déconnexion</button></a></li>
 			</ul>
 		</div>
 	</div>
