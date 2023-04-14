@@ -177,7 +177,7 @@
 				        <div class="col-sm-6">
 				        	<h5 class="card-title">
 								<%if (session.getAttribute("identifiant") != null) {%>
-								<a href="<%if(date.compareTo(article.getDateFinEncheres()) <= 0){ %>DirectionProfilUtilisateur?<%= article.getUtilisateur().getNo_utilisateur()%> <%} else {%>DirectionRemporteEnchere<%= article.getNoArticle()%><%}%>"> <%}%>
+								<a href="DirectionDetailEncheres?<%=article.getNoArticle()%>"> <%}%>
 									<%= article.getNomArticle() %>
 								<%if (session.getAttribute("identifiant") != null) {%></a> <%}%>
 							
