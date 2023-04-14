@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" type="image/png" href="Image/favicon.png">
 	<meta charset="ISO-8859-1">
 	<title>Accueil</title>
 	 <!-- Bootstrap core CSS -->

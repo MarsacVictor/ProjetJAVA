@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
+import java.util.Date;
 import java.io.IOException;
 
 /**
@@ -41,6 +41,7 @@ public class ServletRedirectionEncheres extends HttpServlet {
 			 	EnchereManager enchereManager = new EnchereManager();
 			 	UtilisateurManager utilisateurManager = new UtilisateurManager();
 			 	ArticleManager articleManager = new ArticleManager();
+			 	Date date = new Date();
 			 	ArticleVendu av = articleManager.selectArticleID(Integer.parseInt(request.getQueryString()));
 			 	Retrait r = articleManager.selectRetraitID(Integer.parseInt(request.getQueryString()));
 			 	HttpSession session = request.getSession();
@@ -51,6 +52,9 @@ public class ServletRedirectionEncheres extends HttpServlet {
 			 	}
 			 	u = utilisateurManager.selectionnerUtilisateur((String)session.getAttribute("identifiant"));
 			 	if ( enchereManager.utilisateurDejaEncheriMax(u.getNo_utilisateur(), av.getNoArticle())) {
+			 		encheri = false;
+			 	}
+			 	if(av.getDateDebutEncheres().compareTo(date) > 0) {
 			 		encheri = false;
 			 	}
 			 	request.setAttribute("encheri", encheri);

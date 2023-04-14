@@ -6,7 +6,7 @@
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 		type="javax.sql.DataSource"
 		
-		url="jdbc:sqlserver://localhost:1433;databasename=projetJava;encrypt=true;trustServerCertificate=true;"
+		url="jdbc:sqlserver://10.139.200.21:1433;databasename=projetJava;encrypt=true;trustServerCertificate=true;"
 		username="victor"
 		password="Pa$$w0rd"
 		
